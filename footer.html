@@ -1,0 +1,144 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            
+        
+        
+        
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><i class="fas fa-envelope"></i> info@cosmicexplorations.com</p>
+            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+           
+        </div>
+    </div>
+    
+    
+</footer>
+
+<style>
+    .site-footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 40px 0 0;
+        align-items: center;
+        font-family: 'Arial', sans-serif;
+        margin-top: 40px;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+      
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .footer-section h3 {
+        color: #3498db;
+        margin-bottom: 20px;
+        font-size: 18px;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 50px;
+        text-align: center;
+        justify-content: center;
+        height: 2px;
+        background: #3498db;
+    }
+    
+    .footer-section p {
+        margin: 10px 0;
+        text-align: center;
+        line-height: 1.6;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .footer-section ul li a {
+        color: #bdc3c7;
+        text-decoration: none;
+        transition: color 0.3s;
+       align-items: center ;
+    }
+    
+    .footer-section ul li a:hover {
+        color: #3498db;
+    }
+    
+    .social-icons {
+        margin-top: 20px;
+        align-items: center;
+
+    }
+    
+    .social-icons a {
+        display: inline-block;
+        color: #ecf0f1;
+        background: #34495e;
+        width: 36px;
+        height: 36px;
+        justify-content: center;
+        line-height: 36px;
+        font-size: 18px;
+        margin: 0 5px;
+        align-items: center;
+        text-align: center;
+        border-radius: 50%;
+        margin-right: 60px;
+        transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+        background: #3498db;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        background-color: #1a252f;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-section {
+            flex: 100%;
+            
+        }
+    }
+</style>
+
+<!-- Font Awesome for icons (you can host locally or use CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

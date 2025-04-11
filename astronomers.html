@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Astronomers | SpaceExplore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3a0ca3;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --astronomer-blue: #2a3b4f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Navbar Styles */
+        .space-navbar {
+            background-color: #0a192f;
+            padding: 0.8rem 1rem;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            margin-right: 2rem;
+        }
+        
+        .navbar-logo {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            width: auto;
+        }
+        
+        .navbar-brand-text {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+        
+        .navbar-brand-text small {
+            color: #8892b0;
+            font-size: 0.7rem;
+            font-weight: 400;
+            display: block;
+        }
+        
+        .nav-link {
+            color: #ccd6f6 !important;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        
+        .nav-link:hover {
+            color: #64ffda !important;
+        }
+        
+        /* Article Content Styles */
+        .article-header {
+            background: linear-gradient(rgba(42, 59, 79, 0.8), rgba(22, 34, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .article-header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .article-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .astronomer-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+        
+        .astronomer-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .astronomer-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .astronomer-info {
+            padding: 1.5rem;
+        }
+        
+        .astronomer-name {
+            color: var(--astronomer-blue);
+            margin-top: 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--astronomer-blue);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--astronomer-blue);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left, .right {
+                left: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark space-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://media.istockphoto.com/id/1170261156/vector/set-of-orbit-planet-logo-tech-design-satellite-web-rings-concept-vector-illustration.jpg?s=612x612&w=0&k=20&c=lLiHREtgFEywvhZ_TaUL8j--OBa25zSIe1WnRRRI3HY=" alt="SpaceExplore Logo" class="navbar-logo">
+                <span class="navbar-brand-text ms-2">
+                    SpaceExplore
+                    <small class="d-block">Space Community</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="membership.html">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="article-header">
+        <h1>Pioneers of the Cosmos</h1>
+        <p>Celebrating the greatest astronomers who expanded our understanding of the universe</p>
+    </div>
+
+    <div class="container">
+        <div class="article-content">
+            <h2>Famous Astronomers Through History</h2>
+            <p>From ancient stargazers to modern astrophysicists, astronomers have shaped our understanding of the cosmos. These visionaries challenged conventional wisdom and developed the tools and theories that reveal the universe's secrets.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="astronomer-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiHuSfiy7NyrgrraWFYEFSApd40MPQOWyhjQ&s" alt="Nicolaus Copernicus" class="astronomer-image">
+                        <div class="astronomer-info">
+                            <h3 class="astronomer-name">Nicolaus Copernicus (1473-1543)</h3>
+                            <p>Proposed the heliocentric model, placing the Sun at the center of the solar system. His work "De revolutionibus orbium coelestium" revolutionized astronomy.</p>
+                            <p><strong>Key Contribution:</strong> Heliocentrism</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="astronomer-card">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhMTExMVFRIXGBUbFxgYFxcZGBobGhgaGxcYFhgdHDQgGh0lGxcaIjEhJSkrLi4uGCAzODMsNygtLisBCgoKDg0OGhAQGyslHyY2LS0vLy0tLS4rKzUrLS01LSstLS0tLTIwLS0tKy0tLSstNy0tLSstLS4tLystLS0rL//AABEIAOcA2gMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABEEAACAQIEAgYGBwcDAwUBAAABAhEAAwQSITEFQQYTIlFhcQcyQlKBkRQjYpKhsdEzU3KCweHwFSRDY6LxNHODk8IW/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAEDBAIF/8QAJhEBAAICAgMAAQMFAAAAAAAAAAECAxESIQQxQVETIqFScbHB8P/aAAwDAQACEQMRAD8A7jSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlVP0n425b4fcSz+1vslhDMR1jQxB5HJm1oKH059J92472cC/V2VJDXwAXuEb9UToqb9rc7iBqa1w7o1dxP1uKuXBb3LXXZrhHfLk5R4n5c63sFw7D4GDci9iANFHqp3b7eZ17gKjeKceuX2CjtknsooOWfADVz/gisVslrT02Vx1rCWPSB8GwOBv3VRfWW873bD+ARyWX+JSp8CIrrPQjpba4lYNxBkuoQt20TJRiJEH2lO4bnrsQQOK2eBhYuYx8vNbSkG4fONEH+SDU90N4r1fEsMbdsW7NycO6qDEMGe0XOxbOmhPJm8asxZJ3xlxlxxrcO3UpStLMUpSgUpSgUpSgUpVV6XdObGBPVAG9iSJFpCBAOzXXOltfmTyBqJnXcpiJmdQtVK4lj+n3Erp0vWsOCdFtW1Y+Re5OY+SivuF6T8XQgjENcnldw9sr8SiqR86onysUe5aI8TLMb07ZSqD0e9IuZhbx1r6OxIVbynNh2Y6AF/8AjJPIyPtTpV+q6totG4lRas1nUwUpSunJSsGKxlu0JuXEQd7MFH41q/6sD+ztXrnkmQeYa4VVh5E0EjSo4vim2WzaHIszXD8UAUfJzXxsJc9a5imAG4RbaJ/3KzD71BJUqHscWwyAhLxumdQhuYhgdtkzFfLSsv8Aqjn1MNfYe83V2x8Q7hx92gk6pPpfsOeHNdSZsXbV0wYOUNlYzyhXJ+FWMXMW3/HYQd5uO5+Ki2o/7qx3+H4i4rJdvWSjAqyrYIkEQQc11gQQY2pMbIcQ4PwiboOKe2iQT1RIZjz1E5Qe4sT5VasKbCkJYW2DCKCCHulVZRBMzlgnQCNzNaWL6I2+HXCMULtzB6dVfk5FHuYkIJUj3z2T4HSsdzpphrQ6vB2esJ2yrkUnwAGZj8PjWK0TXqYa4mLdwm8N0aRwXvKiDdtQWIy6liTA1O5naovgvELWIx+CwmET6m1dN5311FtG1E6kFmUZjqSRy1qAxWKxmJuBLt1gzerhrHaut/8AGphR9u4dK6R0D6A/REa7cdreKuCGFtgRbTdbeZlOczqzRBO2gFd46bncuMltRpfaVF/6XdGoxl/yZcOR8YtA/jQLjE9qxeHdleyfvS4J/lFamdKUrSwPERcYoVa3dUSbbxMbZlIJV18QTGxg6Vu0ClKUClKUFc6e9IzgcKXSDfuEW7IO2dge0R7qqCx/hjnXJuF8DuXA1wku7sSzMYd2ntO7QYHwO0ARVx9INsX+I2LTMQlnDm5A5m7cy9+hi0RPcx23qv4ni7luowtsBYGWMssNRmUTAUEESdNPEV5PnZrTb9OnzuXqeDjitedvvpuJgbGFUNccBtdtSZ9kDcx4a6VprxctK2LICjd7hhR4kAgD4n4VjxuG6y9musVIVZXK1wnUiJXlAOo02iYIrJf41aRVRVOh7MADtGducxy1PfrNefNO/wCqf4b4tMx+GO8FuKRefrUMjKGCIw55FClrvgSBPKd6s/QHpQtkvgrzuyoubCtDXHZBAex2QS7WyRETKn7Jqo3WuOpzKbKsdsjAmebk9pj9kdpjyHrDLhMQMPjMARC3Fv2kK+s4S9No9Y85RIuBsgEaaaVs8O80yRHyfjJ5dItjmfsfXXhjb9z9nYyr715sunettZY+TZDXxsC5BN/ENljUW/qU85BNwffraxVq6xhXFtI1IXM8/Znsry3DeQrEnCLUhnBusNQ10l4PeoPZT+UCvaeO0sLicKhJw9vrXPtWkLlvBr57JP8AE9bPXYp/VtW7Q77jF2HnbTsn4XKhuPdLHQsmGs9YVkG609Up7hGrRz2HKZBiETpBjAM5vK0awFQr4gqFnKPBpoLp/pt1v2mJuHvW2FtL8DBuD79ek4FhwQTaV2GzXZusPJrhJ/GqRd43fxOZmdratCKltiANO2xIhizEMADt3aTWl9OuWnzW7hUklQBLO5G8a7D7WkCdBQdUAivtUnhHTlRK4kosAdpT2vEugkR4qfhVyw99XUOjBlYSCDII7waDJSlKD4RNQGK6EcOuMXbBYcsdyLaifOBrU3isSlpGuXGVLaglmYgKoG5JOgFV9ulhbW1g8VdTk4Fm2G/hW9dV/moqJmI9piJn0mOF8Iw+GXLh7FqyvMW0VZ84GvxrdqEwPSvC3MwN0WriQHt3iLbrO2hMMD7ykgwddK3sNxfD3Dlt37Tt3LcUn5A03CNN2lamM4lbtEKzS51CKCzkd4RdY8dhzIrVNq/f9ecPaPsqwN5h3M4OW3z9QsdiGWpHx3F3FJk1FjP1jj3nUAWZ5++w5ZUncVLViw2HW2oRFCoNgNB/k1loFKUoFKUoOW+lH6nG2rpBK3sM9sQSAXtPmUMRrBF1juNFNVNuIX7qdWAWAgE20aYHsnLIUeUfCujdKcE3FrbJh8gTDuWt3mEi5ftyOrT/AKYMo76yZABgmqfwrFMwKlXz2zkezlCtbbmLkt2z3MNCNedeV59OM/qa29Twb8o4bR1vhDLbh8oBAhQua4JnnICAa6ltDPx38Bw1FdWVznAYQpBOsdwgCB8Z3NegpdmJBVFDEkAwX1A7RGywe00AmANFIrXv8Y6tcttpeIzyWCjnDH1mPvbAARO58+ZyW6bo47feKcWNtytsh7gBUsdFtnmAQO0+gnSBEbyKjOj+Fa9jsFb3ZsQlxj39V9c7HzKAfzVgtWGdWcEJaUS11zCAcyvN/wAvGdK6J6LOjBtl8ddDBri5LCsIZbRgtcZfZa4QDl3Cgd5Fb/Dwxy6+e/8Av9Mnl5dUn8y6ITVN6U8dzEW7ZldZGwubaz+7HfsZ0nSpDprxPqbSqWyhyZYbwI0HnMVV+E4QYh82otj1u9jyDuSW5+rmMeExXqWtFY3Lyq1m06hht9fdJCKCNtAwA/mkD5wa206OXjqXRXEQyyZ30YEbeE896tFq2FAVQABsBXqs1s1p9NNcNY9oNOBEKYKrc0grOUFTKkA8+XkY5VGXej1xDm0ZQoEbmZJIPeNRp4eAq319iuYyWj66nFWVLs4e7rlTKO9ULfgAQPnX3CcbvYN+1Bt+0FmNTuUIlT8x5bGT45w9gM1lgp91hmTXnlOxn3Y3qqnGXXUzbVo9dQYbzXQgEDz5jcaaqXi8bZb0ms6ditXAyhhsQCPjWvxLiVrDpnvOEXx3PgBuT5VQ/R5xgi+1kt9U6zbkZe0DzEwCQeWnZ8pjOmhujF3Gvhsu1kwSgEmMsc4gnxnbnGS/CNlK8p03eknSM4t7QtJFm2xuFXE52EdW7CcoRDLDMSM2Q6ZRUBjOMdacrXrl5uaWVNz5gFbfxUtWXjOIwNxsKyWLpS3IvJPauq0EMY1uMjAELpozAchVl4XjutWMMcPZtAkRK5wR3oNFI2KtrNZLzMzve2isREelMurCjLg8UAHty1wQmXrFzg/VdmVJEyYJB1iDscUwyW3dbb5lnSCSg94SdGQe/lWeXImzDB3eIfU2sRnw4ZTevi2OrJRpFq0QfrCXAzEEgBWBMmKtPCuieHskMQbtwahnggHvVQMoPcYJ8a7ritaPWnM5IiWLoHh3TDS65SzsykiHZTEFzuTMwTrly1Y6UrXEajTPM7nZSlKlBSlKBUD07xb2sDfa22RyEQOPYFx1ttc8MgctP2anqxYnDrcRrbqGRwVZWEhlIggjmCKDxw/BJYtW7NtQtu2qqoHIKIFQXSroZYxp6yWs4kCBetxJG4W4p7NxZ5NtyIr1Z4Vi8KMuGvJesj1bOJzZlHJUxKgtlH20c/arKvHMQsC9gL472tNavW/h2hcP/wBdRMRPUpiZjuHN+LdBOKr2QbeJQeqUum20f+3c7KnyevOB6D41onAgEbHE4lCg8cloNm+OtdPs9JsO2/XW4363D4i0Pm9sA+YNez0owQMHGYcHuN62D8i01RPjY/x/Mwvjysv5/wAIDg3QIB0u426MQ6EFLSrkw6EbHq5JuMORcmOQFXWsGFxtu7rbuI4+ywb8jWerqUrSNVjUKbXtad2ncqH6T8dk+jqIJYtlB2zEqoPyYj4+NSvCsELNpUHLc955n/Ntqx9Obyg2QVBIMyZ07SjLpyJifELW8mw8hVGee4hfgj3L7SlJrO0FfQa+UoMOJWRrtqKp2M4bkdirw2YxmmIJkAkag7mdRrsKuWIO1QHSVYthxyIBI3gmJ+G/w8o7xX43/ury05VQNvC9Xdt3GBUi4l3KpDK4RwzdS40JgHTTcxJrrVi8txFdSGRgCDyII0rkGNZjbdSYdYYECJPsuByIIynwneug+j52bh+HZiCWDEQZgFjA843HIyOVbmJPJh0BkKoPeAJrBf4ZZdxcezba4NmZFLDloxEjStulB8AjQbV9pSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgp/pBKhUZ+yqq/bOigsyZROxMrO/KoPB9ObBEWwXReyrZgJjTWdv015xVh6fZCllW94nXuA7WnPcfPumsdpywtgdjOFgSAZPs66KBzMHuAJNZ83uOtr8Xqe2Ph/HUuEAjKSYXc66zJGndUpqQeUH8AZ/Kq7Yx7tiL1h7DIiD9oLxad5GRh4eeojcVMKfqjJJMkAyR7WVfHaJHnVN6zWfWl1LxaOp20+IdIUtMVIMgT8NNfKSBO3lUTj+lOLNxVwuBN5TqWLFQeUSRlU+Znw51PNZQsdA1xUJUNpOhhV5uT3bVFcH4heuG5msC0FuFVh86uPZYKBKTqYExBkRqJrWePLSLXjlx2kOHY27dBN7DvYcaZWZHBHerKYI84PhWj0jujKqH1WDZh3roD5etU9MrJEd1Vnjyg3VLHRSNzACurKCfDOCCeUg8q5xxvJDrJOqI42A+ZbwaVVjmWe0OcR72mmhB+dX7obZCYO0ogGCSJEqWJbKY2IzbVSlXqmSXuaGIOpWdIAy9k/aJ8gCauHR4HrGhiVy6zv6wyhjzgh/nWv9T9/HTLw/by2sFKUqxWUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgqPT0aWZnLmE66akR58/jFblu2Cqzrp8/PvB7q1un9hjaS4B2UzFpyxGhEknTtKNhJiJE1i6OYrPh7eY9oKA3mB/4PxrN5EepaME+4bnUgalVUDu5+EwNPCvPVwiecnzIJJ+8a08djUzwTMK0gAnLJGpjaRmHzrY4rjbdu3ndwqSsk+YIAA1JMRA76onbRGmQ21uLGh5HmPIjY/GviYPk0AcwNz4FoHZ8AB+c4sJxWy0XVYZWXUwRpqRmkSI10MRJqXW8p1BBG8iuor04m3bSvPyqt9KGymywgNLDtCUIMSriNRMcj5GatF1hlJ0/zLVL4zeN64yiBAGWZgjRgTz9YHb3R5UxVnnBktHCWO/h3uMilERRlfLbuNcDDdQikQiEjUydO6rx0StHq3dt2MA94EmfvM3xBqo4LGrbFu3e6xVJMkAvkUnMfUkknMFVgIA7Qjauh4DFWriA2XRrY0GQgqI5abR3cq00rbluzPa0cdQ2aUpVqopSlApSlApSlApSlApSlApSlApSlApSseJvrbVndgqKJJJgAeNBAdOl+oTWB1i6d8qwH4mq3gcWLVvqV9YGMx8T2mPzP4Vv9MeMO+FNwKLdsMjWg4PW3CjhiwWfq1yg7ySDqFqmY28bloXLTZCWug5v4syzHh+Vc2pFvbqtpr6bvEOkFuwjKD9ZDAEd4kSZ31j51mw/FR1HWMw64TltxrEEatsCZ/LxqkNgHBV7hmCxMDsiJPrczEHw0q04GzeuZSCgmABz1Bg+UiotE/HVOPfJ8v8ATEF0zIVPZ7MazmAmTvIMadxPOrbwXiNvKuVibZhQDrBAH4d//mue4jDM+l0hpUwdIn1ivgYX8vCvPRrijI5RtWEBgZGYCO0O4wCSd6m1eUalEW423V0PpE+VYnfbXny/zxnYGq6lwsQGhH9mdEM6mGiFmNmjUHnrWbHYtriDrNQ3ZHmwJX5kR4ecVrYTETbYMdTaQidy5YdVr37fEVxhx8Y79ust+U9Nq3ZNy8lsCCGZWnQppJ07jBMbAho9arPhujSZs9trqXBH1iPlbwB0hh9kyPCo3o3hBcu3MQZkRbHcckjNHkQKvti3lUD5+dWqkPbxOLs/tLf0hPeQKt0fxJOR/EqV8FNSPD+J2r4JtuCR6ymVdfB0PaU+YFbNy4FBZiAoBJJ0AA3JNUbF8SfGPmtWraKuiXXFzrYPNSjKyTvlk6RMbUF7pVY6M8YvG62GxMG4FLpcGzqCAZ0GokcvPkWs9ApSlApSlApSlApSlApSlApSlAqtD/eXsx/9NbYi2vJ2U9q63eAQQvLTNzEe+lvSC3YC4cXIxWI7FpB64zSDc8AoBMncrFbvCrSWlgQqW1A5AAD8tBQU7p5D3mBEqqKuWYHZIYxHeXUfy+VQKYNGMXHi3bUHKmk5z2WJ3M5RAEakDxqQ6acZw927mwuJsXX0z21dS4I3IXmIVZjbL46V/h1wlxcbs2x1c6HLkRp3jYHLHhb+YSmMwv1YQolu0GmJljE9kjYazIGbUETNeGxwUKyn1jAG5Cx7PidhHj3g1t8NvByTEsMwSdly5ASPjAB7lXuBrS6vPeYj2SFUkTBKuzMBzPYKz4HvMhrlgAQ0aQT9loy/HswPNudYsJgCls3igAuMFWd8pOx+6PDU1I4PCqzsHAIAMcw3qkmTvJuKJ8D31ix+K7J3a2s/WGMsLBItgbzHrADSYmg3rmUC4hJKsbg8gydbbaN5XSPtMu5FRmPvravINGAt28w+0uZR+bx4HwrzfdjN46B3tE9yhQVWT9zXvHlWxh8Nh0v27uKuJaXMyvnYKucHNb7R77ZEeC0HQuiuEKW7Y5xmbzOv6VY60+F3LbIGtulxT7SMGU+RFZ8TeCIznZVLHyAk0HNPTd0m6qyuCtt9ZeE3Y9m0OR/iOnkGrkvDOkuLsD6rEOq+6YZfkwIA8q1+PcWfGX7mIcy15p8k9lR3ALA860WPyGw7zQdB4D6Ur1q8ly/ZS8FV1lZtsA5Qk6ypPY2hd67B0W6YYTiCzYufWAS1p+zcXzWdR9pSR41+YAp5n5VlsXmRldGZHUyrKSrKe9WGoNSP1zSuKdF/TBdtgJjbZvKP+W3lW5/OhhW8wV8jXT+j/S7B43TD31Z4k2zK3AOZyNDR4gR41AnKUpQKUpQKUpQKUpQK556RPSUmCnD4bLcxezHdLP8AH7z9yfExoDC+kb0nwWwuAfXUXMQOXetk9/e/L2ddV48fW+BPxJGpoLR0P4iP9QGLxd0kIGuPdcyS5hUA8SCQANgIAgVP9P8ApTcxdu3atzbwbjMdxcuxsHEdlNQY5zXP8HYBbOeWg8/7T+PhUi91iACxIGgBJIA7h3VIzcIvLZcGIWMpjcAxJB79KueJQlGi7lUnTKCRB0Ub+Q5T4zJolWDh+PfKpVvUywskICkZZUGNwD4nXnQbNrE3cJCqQW5iDpJiNd+/wnwqXwzPkkIVGpBlZjMXUiTuCzb6MrcprRGKtm2rk9ogSWlrkTrA2UEg6mBuBA3x38RduLO1koVVdDAHJpG8QJHKddxQbDYpnQtlyTAuAaBhIZYn2smbblUriFtXLd26zBrKyqqCQAoJA9X1id/5hIJE1p4dUxAuFiVeWJUbgBQSFkaljz8I5CYa3h3ZRD9kyCksFOsyRMGP012FB7tcTcIAIaAAZkSp5MJhtNiZia0+knEM6rZzZ8pJJ05AqgPiFknxY91a2PxKIEFppaO0w21G2ukgQNO461Fk0G1wPil/BXOtwtw22PrLvbfwdNj5iCORq4Yr0u4o23V8Hh2UqQ0XLgkEQdMunzqi14veqfI/lQanCcEL13qw2QQcpALxzAOo2EakgaVPf/yikqBcK5VQHsEiSQGYEsO8dnlGpEiqzw/FPaysjZWJiYB07oIjYCt6xx7EnXrTEyOyneDPq94HyqBKt0YkSL2njb+zm2z90VWU7Q00X8T41L4TpFdXMG7YYECYAGkFtF15DcbVEu0aDf8AKg8uQNJafia9W7pBDA7GQymGUjYiNQR3jWvVtIo1sHlr3jQ1I6z6PvSqRlsY98yHRMQfZ7hf8P8Aqcva5tXZAZr8l8M4cLzi2LoS4xATPojMdkdvZJMAMZ1gGAZHQfR/0/u8OufQeIK6WlOUZgc9g8lPvWu6NhtKxEDulK8WLyuqujBkYAqykEEHYgjQjxr3QKUpQK4p6VPSC11nwWFeLKyt64p1uEaNbU8kGxPtHTYHNbPS50uODw4sWmjE3wQCN7dvZ38CfVXxk+zXAQIGlB9rEH1J5RW/xezbW4FtNmUqCTmDa8xIH+TWjZXO0cjp8BufxipEnhkhFHhr5nf8ay0pQKClKDbsY3KIKzAgGYI3Pce81I2ulBXS3ZCKGPtkkiBpMDme47fGonEqi2A4P1pfLlkbGYJESNY+fyjnu5OyNgJM7nvNBYhx+5LyBkb2BoByEfrvqYitDE413OpIGwUEhQO4CtelApSlArFijCN5Gt/A2kbPnbLCMV1AlhsNRr5VG4/9m3l/Wgiz6q+Cz8YgfnXo6DLyAE/0A868z8v6Lv8AjXtBqJ8z5nb+tQPaLGp3/wA0rzYGk8zrX296p8jXpRoKkfaVkw6guoYwpZQTMQCdTMaac6yY+2i3HCGUB7JkGR5jeg1yJ0O1dq6CX8NxrBnD460t3EYcBc7aXDbPqOrjtA6ZWg6lZPrCuK1NdDuPnAYy1iNcgOW6BztNGceMQGA5lBQdX4T0M4lwy+owGJS7gWcF7GIJlASMxQqPWiTIy6xKtvXS6+IwIBBkHUEbEd4r7UBWpxbiVvDWbl+6ctu2pZjz05AcyToBzJFbdcZ9OfSEtct4FD2VAu3vFjPVIfIAsR9pDyoOddIeM3MZiLuJu+s50EyEUaIg8APmZPOo6lfHOhqRjdtCeZ0H9K3eGWoWe/8AIfrqfjWhf5DkP0J/p+NTNtYAHcBQeqUpQK8ZDyY/gf717rx1o8fkf0oMd6ezPvL+dfWtqx3kj+Ex8xXlu0/gq6ebSJ+Q/GsWHUqZM7Rorfp4UGz1X2m/AfkKyCvC3J5H4gj8690ClKUCtbiDRbb4fnWzWlxQ9lf4h+FBoZdQOQA/v+Q+VZrfM9/5cv8APGsaid/M/wBBWag8X/VNexXi96reR/KvS7Cg+0pSgUpSg/Qfod439I4ettjNzDnqj4qADaPlkIWe9DV5rgHoX4x1HEOqJ7GJQp/OkvbJ+HWDzcV3+oHxmABJMAakmvyt0l4oMXi8RiRMXbhZZ3y6Lbn+RVHwrsfpm6U/R8P9Etn67EKc0bpZ2Y+b6oPDOfZrhVAr41fa+EfKpGMLJVeZOvx/tPyqZqMwWtw+AP5D9TUnQK2sXiVdLShYKLBOmu3d8fnWrSgUrywPIxXliVBJIgCdB/eg1zeh2MTsPl/cn5Vtq0gHvrXGGlRPrSSd+esaGsgDDQBY8yP6UGWtqziVFq4hWWbLB00ggnx2kfGtNJ5x8DP9K9UClKUCtHignIPGflW9WhjT2x4KfxP9qDAND5/0rd4XiVtXVdlzKJkaa6Ec/OtSKUC5rPcZrxZMqK91jw/qjwoMlKUoFDSlBJYrikX7d+yuVrZtsoMCWtnMJjvgCv1Dw/GpetW7qGUuIjqfssoYfga/JlWfBcTvrbRVv3AoVQACIAAEAaUGn0pxl7GYu/iCjkO5ydloFtTFoDT3ACfEk86i/odz92/3W/SqlXT8F6Jc9q05xJDXTYykWXhc9u87hkIzR2Eh2KCCxIiJgV36Hc/dv91v0qTwvRq86Z4ABUkb+sNg+nZB79Y7q27vokZUc/TEzpbd2XqmjsWrdxgGza6XkEx391UXpFwo4TE3sOWDm05XMBAMc45UFxwvRHEhwYXx1bWRMjs7HMtZsbwi7ajMpMz6oY7d+lc3pQX/AOiv7j/dP6U+iv7j/dP6VQKUF8OGu/uyfgw//NeL+FukD6t/WTZWOmYTyqjUoLzaweI0Y23yEkersR+PLnWb6K/uP90/pVApQX/6K/uP90/pT6K/uP8AdP6VQKUF/wDor+4/3T+lPor+4/3T+lUClB0O1gLrTFtzAJOh2G/nUXfwlzrG+rfZfZbx8KqFKC2/Q7n7t/ut+lPodz92/wB1v0qpUoLb9Dufu3+636V8wvD7pbKEYEtAJUgdrmTGg1/CqnSg6I/RS+FkQW7WmsEBVYZTEkkNzAiK+XOieJAJhTAJ0Lcs32fsmueVs4Kxbac90W4iJVmnefV2iB86Cz4jh11GZDbYlSQYViNDGhjavH0O5+7f7rfpUHewNlc3+5UkKCsI5DEz2Z5aRr4+FZDgMNp/uxHP6m5pQTH0O5+7f7rfpU3hsM+Rew3qj2T3eVc7xCKrEK2dQdGgifGDqKx0CrUvpF4mBH0kxpp1dnWAQCexqYJ1Os6760pQZMB6RMcl0Pcum6uudCttQwKopUkJtFq393xMwPSDirYvE3sQyhWuuzFRMCeQmlKCPpSlApSlApSlApSlApSlApSlApSlApSlApSlAqS4dx2/YQpacKpJYyltjJEbspOw/rSlBsL0qxQLEOksZP1NjUwFn1O5RX1uleKmcyBognqrUnVjJld+2RpHLupSgi8binuu1xzLtuYA5RsBHKsFKUH/2Q==" alt="Galileo Galilei" class="astronomer-image">
+                        <div class="astronomer-info">
+                            <h3 class="astronomer-name">Galileo Galilei (1564-1642)</h3>
+                            <p>Father of observational astronomy who improved the telescope and discovered Jupiter's moons, lunar craters, and Milky Way stars.</p>
+                            <p><strong>Key Contribution:</strong> Telescope observations supporting heliocentrism</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="astronomer-card">
+                        <img src="data:image/jpeg;base64,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" alt="Johannes Kepler" class="astronomer-image">
+                        <div class="astronomer-info">
+                            <h3 class="astronomer-name">Johannes Kepler (1571-1630)</h3>
+                            <p>Discovered the three laws of planetary motion, proving planets move in ellipses with the Sun at one focus.</p>
+                            <p><strong>Key Contribution:</strong> Laws of planetary motion</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="astronomer-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOgc0rIKcPHjy6ixgIHZ3z84PKobyt8UCNjQ&s" alt="Isaac Newton" class="astronomer-image">
+                        <div class="astronomer-info">
+                            <h3 class="astronomer-name">Isaac Newton (1643-1727)</h3>
+                            <p>Formulated the laws of motion and universal gravitation, explaining celestial mechanics.</p>
+                            <p><strong>Key Contribution:</strong> Law of universal gravitation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Modern Astronomy Pioneers</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Edwin Hubble (1889-1953)</h3>
+                        <p>Discovered galaxies beyond the Milky Way and the expanding universe, leading to Hubble's Law.</p>
+                        <p><em>"Equipped with his five senses, man explores the universe and calls the adventure Science."</em></p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Cecilia Payne-Gaposchkin (1900-1979)</h3>
+                        <p>Discovered stars are composed mainly of hydrogen and helium, revolutionizing stellar composition understanding.</p>
+                        <p>First woman to earn a PhD in astronomy from Harvard.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Carl Sagan (1934-1996)</h3>
+                        <p>Popularized astronomy through Cosmos TV series, contributed to planetary science and SETI.</p>
+                        <p><em>"Somewhere, something incredible is waiting to be known."</em></p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Vera Rubin (1928-2016)</h3>
+                        <p>Provided evidence for dark matter through galaxy rotation curve studies.</p>
+                        <p>Paved the way for women in astronomy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Women in Astronomy</h2>
+            <p>Women have made extraordinary contributions to astronomy despite historical barriers:</p>
+            <ul>
+                <li><strong>Caroline Herschel (1750-1848):</strong> First woman to discover a comet and receive a salary for scientific work</li>
+                <li><strong>Annie Jump Cannon (1863-1941):</strong> Developed stellar classification system still used today</li>
+                <li><strong>Jocelyn Bell Burnell (1943-):</strong> Discovered pulsars as a graduate student</li>
+                <li><strong>Nancy Grace Roman (1925-2018):</strong> "Mother of Hubble" who championed space telescopes</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

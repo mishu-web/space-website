@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroScience Portal | Secure Login</title>
+    <style>
+        :root {
+            --space-blue: #0b3d91;
+            --star-yellow: #fcba03;
+            --nebula-purple: #6a0dad;
+            --dark-space: #050a30;
+            --white: #ffffff;
+            --light-gray: #f0f2f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-space);
+            color: var(--white);
+            background-image: url('https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Navbar styles */
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 10, 48, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Main content container */
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 80px auto 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+        
+        /* Login container */
+        .login-container {
+            background: rgba(11, 61, 145, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(252, 186, 3, 0.15);
+            animation: fadeIn 0.8s ease-in-out;
+            height: fit-content;
+        }
+        
+        /* Content section */
+        .content-section {
+            background: rgba(11, 61, 145, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(252, 186, 3, 0.15);
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Logo styles */
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo img {
+            width: 70px;
+            height: auto;
+            filter: drop-shadow(0 0 8px rgba(252, 186, 3, 0.4));
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            margin-top: 15px;
+            color: var(--star-yellow);
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .logo p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+        
+        /* Form styles */
+        .input-group {
+            margin-bottom: 22px;
+            position: relative;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.25);
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--star-yellow);
+            box-shadow: 0 0 0 3px rgba(252, 186, 3, 0.2);
+            background: rgba(0, 0, 0, 0.35);
+        }
+        
+        /* Remember me & forgot password */
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: var(--star-yellow);
+        }
+        
+        .forgot-password a {
+            color: var(--star-yellow);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .forgot-password a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Login button */
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--star-yellow), #f89b00);
+            color: var(--dark-space);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(252, 186, 3, 0.4);
+            background: linear-gradient(135deg, #ffc926, #f89b00);
+        }
+        
+        /* Signup link */
+        .signup-link {
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .signup-link a {
+            color: var(--star-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            margin-left: 5px;
+        }
+        
+        .signup-link a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Security notice */
+        .security-notice {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid var(--star-yellow);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Content section styles */
+        .content-section h2 {
+            color: var(--star-yellow);
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 1px solid rgba(252, 186, 3, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .content-section h3 {
+            color: var(--white);
+            margin: 20px 0 10px;
+            font-size: 18px;
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .content-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .content-section li {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Stars animation */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .login-container, .content-section {
+                max-width: 600px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .login-container, .content-section {
+                padding: 30px 20px;
+                margin: 0 15px;
+            }
+            
+            .logo img {
+                width: 60px;
+            }
+            
+            .logo h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    
+    <div class="stars" id="stars"></div>
+    
+    <div class="main-container">
+        <div class="login-container">
+            <div class="logo">
+                <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="AstroScience Logo">
+                <h1>AstroScience Portal</h1>
+                <p>Secure access to astronomical research tools</p>
+            </div>
+            
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="email">Institutional Email</label>
+                    <input type="email" id="email" name="email" placeholder="researcher@institution.edu" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Access Credentials</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your secure passphrase" required>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Maintain session</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Credentials recovery</a>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">AUTHENTICATE & PROCEED</button>
+                
+                <div class="signup-link">
+                    New research member? <a href="#">Request portal access</a>
+                </div>
+                
+                <div class="security-notice">
+                    <strong>Security Notice:</strong> This portal uses TLS 1.3 encryption. Ensure your credentials are protected at all times.
+                </div>
+            </form>
+        </div>
+        
+        <div class="content-section">
+            <h2>AstroScience Research Portal</h2>
+            <p>Welcome to the premier astronomical research platform connecting scientists, researchers, and academic institutions worldwide. Our portal provides secure access to cutting-edge astronomical data, research tools, and collaborative workspaces.</p>
+            
+            <h3>Portal Features</h3>
+            <ul>
+                <li>Real-time access to telescope arrays and observatory networks</li>
+                <li>Secure data sharing and collaborative research environments</li>
+                <li>Advanced analytical tools for celestial data processing</li>
+                <li>Direct connection to supercomputing resources for complex simulations</li>
+                <li>Publication management and peer review system integration</li>
+            </ul>
+            
+            <h3>Current Research Initiatives</h3>
+            <p>The AstroScience Portal currently supports several groundbreaking research projects:</p>
+            <ul>
+                <li><strong>Exoplanet Discovery Program:</strong> Analyzing data from the Kepler and TESS missions</li>
+                <li><strong>Cosmic Microwave Background Analysis:</strong> Processing data from the Planck satellite</li>
+                <li><strong>Galactic Structure Mapping:</strong> Collaborative project using Gaia DR3 data</li>
+                <li><strong>Time-Domain Astronomy:</strong> Real-time monitoring of transient astronomical events</li>
+            </ul>
+            
+            <h3>System Requirements</h3>
+            <p>For optimal performance, ensure your system meets these specifications:</p>
+            <ul>
+                <li>Modern web browser (Chrome 90+, Firefox 85+, Safari 14+)</li>
+                <li>Minimum 8GB RAM for data visualization tools</li>
+                <li>WebGL 2.0 support for 3D astronomical visualizations</li>
+                <li>Stable internet connection (10Mbps recommended)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Create twinkling stars
+        const starsContainer = document.getElementById('stars');
+        const starCount = 150;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random position
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            // Random size (1-3px)
+            const size = Math.random() * 2 + 1;
+            
+            // Random animation duration (2-5s)
+            const duration = Math.random() * 3 + 2;
+            
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${duration}s`);
+            
+            // Random delay
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Navbar loader
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                })
+                .catch(err => console.log('Failed to load navbar:', err));
+        });
+    </script>
+</body>
+</html>

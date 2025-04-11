@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SpaceXplore</title>
+    <style>
+        :root {
+            --primary: #3a0ca3;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Navbar Styles (same as before) */
+        nav {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        /* Main Content Styles */
+        .about-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .about-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .about-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .about-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .mission-vision {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            color: #212529;
+        }
+        
+        .mission, .vision {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .team-grid {
+            display: grid;
+            padding: 0%;
+           
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-info {
+            padding: 1rem;
+            color: var(--dark);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .mission-vision {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="nav-placeholder"></div>
+
+     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+    <div class="about-header">
+        <h1>Exploring the Cosmos Together</h1>
+        <p>At SpaceXplore, we're passionate about making astronomy accessible to everyone and fostering a community of space enthusiasts.</p>
+    </div>
+    
+    <div class="container">
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>Founded in 2015 by a group of astronomy enthusiasts, SpaceXplore began as a small community of stargazers meeting in local parks. What started as informal telescope viewing sessions has grown into a thriving space education center with thousands of members across the country.</p>
+            <p>Our founders recognized that many people were fascinated by space but lacked access to equipment and knowledgeable guides. SpaceXplore was created to bridge this gap, providing high-quality telescopes and expert-led experiences to people of all ages and backgrounds.</p>
+        </div>
+        
+        <div class="mission-vision">
+            <div class="mission">
+                <h3>Our Mission</h3>
+                <p>To democratize access to astronomical education and equipment, inspiring wonder and scientific curiosity through direct experiences with the cosmos.</p>
+            </div>
+            <div class="vision">
+                <h3>Our Vision</h3>
+                <p>A world where everyone has the opportunity to explore the universe firsthand, fostering a deeper connection with science and our place in the cosmos.</p>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2>Our Team</h2>
+            <p>Our team consists of professional astronomers, passionate educators, and dedicated volunteers who share a common love for space exploration.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dr. Sarah Johnson">
+                    <div class="team-member-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>Founder & Lead Astronomer</p>
+                        <p>PhD in Astrophysics, former NASA researcher</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Michael Chen">
+                    <div class="team-member-info">
+                        <h3>Michael Chen</h3>
+                        <p>Education Director</p>
+                        <p>10+ years in science education</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Emma Rodriguez">
+                    <div class="team-member-info">
+                        <h3>Emma Rodriguez</h3>
+                        <p>Outreach Coordinator</p>
+                        <p>Specialist in community engagement</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="data:image/jpeg;base64,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" alt="David Kim">
+                    <div class="team-member-info">
+                        <h3>Dr. Katherine Johnson</h3>
+                        <p>– Mathematician and "human computer"</p>
+                        <p> who calculated trajectories for Apollo missions</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="data:image/jpeg;base64,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" alt="David Kim">
+                    <div class="team-member-info">
+                        <h3>Dr. Michelle Thaller</h3>
+                        <p> – Astronomer and science communicator .</p>
+                        <p>(NASA's Goddard Space Flight Center).</p>
+                    </div>
+                </div> 
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="David Kim">
+                    <div class="team-member-info">
+                        <h3>David Kim</h3>
+                        <p>Equipment Specialist</p>
+                        <p>Telescope technician & astrophotographer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2>By The Numbers</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Workshops Held</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40</div>
+                    <div class="stat-label">Telescopes Available</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <h2>Our Facilities</h2>
+            <p>Our headquarters in Cosmos City features:</p>
+            <ul>
+                <li>A state-of-the-art observatory with a 16-inch research-grade telescope</li>
+                <li>Classroom spaces for workshops and lectures</li>
+                <li>An astronomy library with hundreds of volumes</li>
+                <li>Outdoor viewing platforms with portable telescopes</li>
+                <li>Virtual reality space exploration station</li>
+            </ul>
+            <p>We also operate mobile telescope units that visit schools and community centers throughout the region.</p>
+        </div>
+    </div>
+</body>
+</html>

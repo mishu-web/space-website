@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceExplore - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+   
+</head>
+<body>
+    <!-- Navigation -->
+  
+    <div id="nav-placeholder"></div>
+
+    <script>
+    // Simple navbar loader
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Add 60px padding to body to prevent navbar from hiding content
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+    <!-- Hero Section -->
+    <header class="hero-header">
+        <div class="container hero-content text-center py-5 animate__animated animate__fadeIn">
+            <h1 class="display-3 fw-bold mb-4" style="text-shadow: 0 2px 10px rgba(22, 22, 20, 0.5);">EXPLORE THE COSMOS</h1>
+            <p class="lead mb-5" style="font-size: 1.5rem; max-width: 800px; margin: 0 auto;">Discover the wonders of our universe through stunning imagery, cutting-edge research, and community exploration</p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="membership.html" class="btn nasa-btn btn-lg px-5">
+                    <i class="fas fa-rocket me-2"></i>JOIN OUR MISSION
+                </a>
+                <a href="gallery.html" class="btn btn-outline-light btn-lg px-5">
+                    <i class="fas fa-images me-2"></i>VIEW GALLERY
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Space Objects Gallery -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title animate__animated animate__fadeInUp">FEATURED CELESTIAL WONDERS</h2>
+            <div class="space-gallery">
+                <!-- Item 1 -->
+                <div class="space-item animate__animated animate__fadeInUp">
+                    <a href="galaxy.html">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Galaxy" class="space-img">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="h4 mb-3">ANDROMEDA GALAXY</h3>
+                        <p class="mb-4">Our closest galactic neighbor, on a collision course with the Milky Way in about 4 billion years.</p>
+                        <a href="galaxy.html" class="btn nasa-btn">EXPLORE <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="space-item animate__animated animate__fadeInUp animate__delay-1s">
+                    <a href="saturn.html">
+                        <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Saturn" class="space-img">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="h4 mb-3">SATURN'S RINGS</h3>
+                        <p class="mb-4">Composed of billions of ice particles, these spectacular rings are only about 10 meters thick.</p>
+                        <a href="saturn.html" class="btn nasa-btn">EXPLORE <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="space-item animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="blackhole.html">
+                        <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Black Hole" class="space-img">
+                    </a>
+                    <div class="p-4">
+                        <h3 class="h4 mb-3">SUPERMASSIVE BLACK HOLE</h3>
+                        <p class="mb-4">At the center of our galaxy lies Sagittarius A*, with 4 million times the Sun's mass.</p>
+                        <a href="blackhole.html" class="btn nasa-btn">EXPLORE <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Left / Content Right Section -->
+    <section class="content-section" style="background: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover fixed;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate__animated animate__fadeInLeft">
+                    <img src="https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="James Webb Telescope" class="img-fluid section-image floating">
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="section-content bg-dark p-4 rounded" style="background: rgba(11,12,42,0.85) !important;">
+                        <h2 class="section-title">JAMES WEBB SPACE TELESCOPE</h2>
+                        <p class="lead">The most powerful space telescope ever built is revolutionizing our understanding of the universe.</p>
+                        <p>Launched in December 2021, JWST can look further back in time than any previous telescope, observing the first galaxies that formed after the Big Bang. Its infrared capabilities allow it to peer through cosmic dust clouds where stars and planetary systems are being born.</p>
+                        <ul class="mb-4">
+                            <li>Primary mirror: 6.5 meters (21.3 feet) in diameter</li>
+                            <li>Operating temperature: -223°C (-370°F)</li>
+                            <li>Orbit location: 1.5 million km from Earth</li>
+                        </ul>
+                        <a href="telescopeworkshop.html" class="btn nasa-btn">LEARN MORE <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Left / Image Right Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 animate__animated animate__fadeInRight">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Earth from Space" class="img-fluid section-image floating">
+                </div>
+                <div class="col-lg-6 order-lg-1 animate__animated animate__fadeInLeft">
+                    <div class="section-content">
+                        <h2 class="section-title">OUR PALE BLUE DOT</h2>
+                        <p class="lead">Earth as seen from space reminds us of our planet's fragility and beauty.</p>
+                        <p>This perspective, first captured by Voyager 1 from 6 billion kilometers away, shows Earth as a mere speck in the vast cosmic arena. Our atmosphere, thinner relative to Earth's size than the skin of an apple, protects all known life from the harshness of space.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="bg-dark p-3 rounded h-100" style="background: rgba(27,29,59,0.7) !important;">
+                                    <h5 class="text-gold"><i class="fas fa-globe-americas me-2"></i>EARTH FACTS</h5>
+                                    <ul class="small">
+                                        <li>Age: 4.54 billion years</li>
+                                        <li>Surface area: 510 million km²</li>
+                                        <li>71% covered by water</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="bg-dark p-3 rounded h-100" style="background: rgba(27,29,59,0.7) !important;">
+                                    <h5 class="text-gold"><i class="fas fa-satellite me-2"></i>ORBIT DETAILS</h5>
+                                    <ul class="small">
+                                        <li>Orbital speed: 107,000 km/h</li>
+                                        <li>Distance from Sun: 150 million km</li>
+                                        <li>Axial tilt: 23.5 degrees</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="earth.html" class="btn nasa-btn mt-2">EXPLORE EARTH <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Space Cards Section -->
+    <section class="content-section" style="background: linear-gradient(rgba(11,12,42,0.9), rgba(27,29,59,0.9));">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title animate__animated animate__fadeInUp">LATEST SPACE DISCOVERIES</h2>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4 animate__animated animate__fadeIn">
+                    <div class="space-card h-100">
+                        <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Mars">
+                        <div class="card-body">
+                            <h3 class="card-title">MARS WATER DISCOVERY</h3>
+                            <p class="card-text">New radar data reveals potential liquid water lakes beneath Mars' south polar ice cap, dramatically increasing the chances of microbial life.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Updated 3 days ago</small>
+                                <a href="mars.html" class="btn btn-sm nasa-btn">Read</a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4 animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="space-card h-100">
+                        <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Exoplanet">
+                        <div class="card-body">
+                            <h3 class="card-title">HABITABLE EXOPLANETS</h3>
+                            <p class="card-text">Astronomers identify 24 "super-habitable" planets with conditions that may be better suited for life than Earth itself.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Updated 1 week ago</small>
+                                <a href="astronomers.html" class="btn btn-sm nasa-btn">Read</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4 animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="space-card h-100">
+                        <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="James Webb">
+                        <div class="card-body">
+                            <h3 class="card-title">WEBB'S NEW FINDINGS</h3>
+                            <p class="card-text">JWST detects carbon dioxide in the atmosphere of an exoplanet 700 light-years away, a first in the search for habitable worlds.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Updated 2 weeks ago</small>
+                                <a href="jupiter.html" class="btn btn-sm nasa-btn">Read</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class ="space">
+        <iframe  src="https://stellarium-web.org/" width="800" height="600"></iframe>
+    </div>
+    
+    <!-- Another Image Left / Content Right Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate__animated animate__fadeInLeft">
+                    <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Milky Way" class="img-fluid section-image floating">
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="section-content">
+                        <h2 class="section-title">OUR GALACTIC HOME</h2>
+                        <p class="lead">The Milky Way galaxy is our cosmic neighborhood, containing over 100 billion stars.</p>
+                        <p>Our solar system resides in one of the Milky Way's spiral arms, about 27,000 light-years from the galactic center. It takes our Sun about 225-250 million years to complete one orbit around the galaxy's center - a period called a cosmic year.</p>
+                        
+                        <div class="progress mb-3" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar bg-gold" role="progressbar" style="width: 75%; background: var(--space-gold);" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="row text-center mb-4">
+                            <div class="col-4">
+                                <h4 class="text-gold mb-0">100+</h4>
+                                <small>Billion Stars</small>
+                            </div>
+                            <div class="col-4">
+                                <h4 class="text-gold mb-0">1 Trillion+</h4>
+                                <small>Solar Masses</small>
+                            </div>
+                            <div class="col-4">
+                                <h4 class="text-gold mb-0">13.6B</h4>
+                                <small>Years Old</small>
+                            </div>
+                        </div>
+                        
+                        <a href="galaxy.html" class="btn nasa-btn">EXPLORE THE MILKY WAY <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--space-purple), var(--space-blue)); border-top: 3px solid var(--space-gold); border-bottom: 3px solid var(--space-gold);">
+        <div class="container text-center py-4 animate__animated animate__fadeIn">
+            <h2 class="display-5 fw-bold mb-4">READY TO EXPLORE THE COSMOS?</h2>
+            <p class="lead mb-5" style="max-width: 700px; margin: 0 auto;">Join our community of space enthusiasts and gain access to exclusive content, live events with NASA scientists, telescope workshops, and much more!</p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="membership.html" class="btn btn-light btn-lg px-5 py-3 fw-bold" style="color: var(--space-purple);">
+                    <i class="fas fa-user-astronaut me-2"></i>BECOME A MEMBER
+                </a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+                    <i class="fas fa-envelope me-2"></i>CONTACT US
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="py-5" style="background: rgba(11,12,42,0.95); border-top: 1px solid rgba(255,215,0,0.2);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-gold mb-4">SPACEEXPLORE</h5>
+                    <p>Exploring the wonders of the universe and bringing space closer to enthusiasts around the world through education and community.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-gold mb-4">EXPLORE</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About</a></li>
+                        <li class="mb-2"><a href="membership.html" class="text-white">Membership</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-white">Gallery</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-gold mb-4">ARTICLES</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="blackhole.html" class="text-white">Black Holes</a></li>
+                        <li class="mb-2"><a href="earth.html" class="text-white">Earth</a></li>
+                        <li class="mb-2"><a href="galaxy.html" class="text-white">Galaxies</a></li>
+                        <li class="mb-2"><a href="stars.html" class="text-white">Stars</a></li>
+                        <li class="mb-2"><a href="telescopeworkshop.html" class="text-white">Telescopes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-gold mb-4">NEWSLETTER</h5>
+                    <p>Subscribe to our newsletter for the latest space news and events.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control bg-dark border-dark text-white" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn nasa-btn" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">© 2023 SpaceExplore. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">
+                        <a href="#" class="text-white me-3">Privacy Policy</a>
+                        <a href="#" class="text-white me-3">Terms of Service</a>
+                        <a href="#" class="text-white">Sitemap</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add animation class when scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animation = entry.target.dataset.animate || 'animate__fadeInUp';
+                        entry.target.classList.add(animation);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Floating animation duration randomization
+            document.querySelectorAll('.floating').forEach(el => {
+                el.style.animationDuration = `${6 + Math.random() * 4}s`;
+            });
+        });
+    </script>
+</body>
+</html> 

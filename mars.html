@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars - The Red Planet | SpaceExplore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3a0ca3;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --mars-red: #c1440e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark);
+
+            line-height: 1.6;
+        }
+        
+       
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+     
+      
+        
+        /* Article Content Styles */
+        .article-header {
+            background: linear-gradient(rgba(193, 68, 14, 0.8), rgba(101, 30, 6, 0.8)), 
+                        url('https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .article-header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .article-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            color: #212529;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .mars-fact-box {
+            background-color: #f9f3f0;
+            border-left: 4px solid var(--mars-red);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.02);
+        }
+        
+        h2, h3 {
+            color: var(--mars-red);
+            margin-top: 1.5rem;
+        }
+        h2{
+            color: #3a0ca3;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2rem;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <script>
+    // Simple navbar loader
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Add 60px padding to body to prevent navbar from hiding content
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script> 
+    <br>
+    <br>
+
+
+    <div class="article-header">
+        <h1>Mars: The Red Planet</h1>
+        <p>Earth's mysterious neighbor and the next frontier for human exploration</p>
+    </div>
+
+    <div class="container">
+        <div class="article-content">
+            <h2>Introduction to Mars</h2>
+            <p>Mars, the fourth planet from the Sun, has captivated human imagination for centuries. Named after the Roman god of war, this rusty-red world has been the subject of scientific study and science fiction alike. With its thin atmosphere, polar ice caps, and evidence of ancient water flows, Mars remains one of the most Earth-like planets in our solar system.</p>
+            
+            <div class="mars-fact-box">
+                <h3>Quick Mars Facts</h3>
+                <p><strong>Diameter:</strong> 6,779 km (about half of Earth's)<br>
+                <strong>Mass:</strong> 10.7% of Earth's<br>
+                <strong>Surface Gravity:</strong> 38% of Earth's<br>
+                <strong>Average Temperature:</strong> -63°C (-81°F)<br>
+                <strong>Day Length:</strong> 24 hours, 37 minutes<br>
+                <strong>Year Length:</strong> 687 Earth days</p>
+            </div>
+
+            <h2>Surface Features</h2>
+            <p>Mars boasts some of the most dramatic landscapes in the solar system:</p>
+            <ul>
+                <li><strong>Olympus Mons:</strong> The largest volcano in the solar system (3x taller than Everest)</li>
+                <li><strong>Valles Marineris:</strong> A canyon system stretching 4,000 km (10x longer than Grand Canyon)</li>
+                <li><strong>Polar Ice Caps:</strong> Composed of water ice and frozen carbon dioxide</li>
+                <li><strong>Ancient River Valleys:</strong> Evidence of past liquid water flows</li>
+            </ul>
+
+            <div class="image-gallery">
+                <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mars Surface" class="gallery-image">
+                <img src="https://images.unsplash.com/photo-1614728423166-0e7e1a4345e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mars Rover" class="gallery-image">
+                <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mars Landscape" class="gallery-image">
+            </div>
+
+            <h2>Exploration of Mars</h2>
+            <p>Humanity has sent over 50 missions to Mars since the 1960s:</p>
+            <ul>
+                <li><strong>Rovers:</strong> Perseverance, Curiosity, Opportunity, and Spirit have explored the surface</li>
+                <li><strong>Orbiters:</strong> MAVEN, Mars Reconnaissance Orbiter, and others study from above</li>
+                <li><strong>Future Missions:</strong> Plans for human missions in the 2030s</li>
+            </ul>
+
+            <h2>Potential for Life</h2>
+            <p>Mars remains the most promising candidate for extraterrestrial life in our solar system:</p>
+            <ul>
+                <li>Evidence of ancient lakes and rivers</li>
+                <li>Subsurface liquid water possible</li>
+                <li>Methane detections that could indicate biological activity</li>
+                <li>Potential for microbial life in protected environments</li>
+            </ul>
+
+            <div class="mars-fact-box">
+                <h3>Did You Know?</h3>
+                <p>Mars has the largest dust storms in the solar system, which can last for months and cover the entire planet. These storms can reach speeds of 100 km/h (60 mph) and create dust towers that reach 80 km (50 miles) high!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

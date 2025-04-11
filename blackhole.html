@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKHOLE</title>
+    <link rel="stylesheet" href="telescopeworkshop.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #d3c1c1;
+            background-color: #071620;
+        }
+        
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .content-container {
+            max-width: 900px;
+            margin: 60px auto 20px; /* 60px top margin for navbar */
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #bcc2ba;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h2 {
+            color: #bcc2ba;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #bcc2ba;
+            margin-top: 20px;
+        }
+        
+        b {
+            color: #bcc2ba;
+        }
+        
+        .key-concept {
+            background-color: #6391c0;
+            padding: 15px;
+            border-left: 4px solid #062031;
+            margin: 15px 0;
+        }
+        
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        #footer-placeholder {
+        
+            background-color: #062031;
+            color: #bcc2ba;
+            text-align: center;
+            width : 100%;
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="nav-placeholder"></div>
+    <script>
+        // Simple navbar loader
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                    // Add 60px padding to body to prevent navbar from hiding content
+                    document.body.style.paddingTop = '60px';
+                })
+                .catch(err => console.log('Failed to load navbar:', err));
+        });
+        </script>
+
+    <div class="content-container">
+        <h1>
+            <img src="https://miro.medium.com/v2/resize:fit:1200/1*abURLvDW0N-49vi5j7IRiA.jpeg" alt="Black Hole" class="img-fluid" height="600">
+            <h3>
+              <h1><b> Introduction</b></h1>  <br>
+Black holes are among the most fascinating and mysterious objects in the universe. These cosmic entities, where gravity is so intense that not even light can escape, challenge our understanding of physics and the nature of reality. Predicted by Einstein's theory of general relativity, black holes have captivated scientists and the public alike, inspiring countless studies, theories, and even science fiction.
+
+This article explores the nature of black holes, their formation, types, properties, and the latest discoveries in astrophysics. By delving into the science behind these enigmatic objects, we can better appreciate their role in shaping the cosmos.
+
+<h1><b>1. What is a Black Hole?</b></h1>
+
+A black hole is a region in space where the gravitational pull is so strong that nothing—no particles, radiation, or even light—can escape from it. The boundary surrounding a black hole, beyond which escape is impossible, is called the event horizon.
+<h3><b>Key Characteristics:</b></h3>
+<h3><b>Singularity:</b></h3>
+ At the center of a black hole lies a point of infinite density known as a singularity, where the laws of physics as we know them break down.
+<h3><b>Event Horizon: </b></h3>
+The <b>"point of no return,"</b> where the escape velocity exceeds the speed of light.
+<h3><b>Gravitational Time Dilation:</b></h3>
+ Time slows down near a black hole due to extreme gravity, as predicted by Einstein's relativity.
+<h1><b>2. Formation of Black Holes</b></h1>
+
+Black holes form from the remnants of massive stars that have exhausted their nuclear fuel. The process depends on the star's mass:
+<h3><b>A. Stellar Black Holes (3–20 Solar Masses)</b></h3>
+
+When a massive star (at least 20–25 times the Sun's mass) runs out of fuel, it undergoes a supernova explosion.
+
+The core collapses under gravity, forming either a neutron star or, if massive enough, a black hole.
+<h3><b>B. Supermassive Black Holes (Millions to Billions of Solar Masses)</b></h3>
+
+Found at the centers of galaxies, including our Milky Way (Sagittarius A*).
+<h3><b>Formation theories include:</b></h3>
+
+
+<!--         <li>Direct collapse of massive gas clouds</li>
+ -->
+

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans | Cosmic Explorations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .page-header {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 20px 0;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+          
+            color : white;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Membership Cards */
+        .membership-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .membership-card {
+            background: white;
+            color: #2980b9;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 350px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .membership-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: var(--secondary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .card-header .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .card-header .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .benefits-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .benefits-list li i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s ease;
+            width: 30%;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Featured Badge */
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.4);
+        }
+        
+        .featured-card {
+            position: relative;
+            border: 2px solid var(--primary);
+        }
+        
+        /* Article Content */
+        .article-content {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .article-content h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color : #555;
+            line-height: 1.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .membership-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .membership-card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                padding: 25px;
+            }
+           
+        }
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 1000;  
+        }
+
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+       <script>
+    // Simple navbar loader
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Add 60px padding to body to prevent navbar from hiding content
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+    <div class="container">
+        <header class="page-header">
+            <h1>Join Our Cosmic Community</h1>
+            <p>Choose the membership plan that fits your astronomical aspirations. All plans include exclusive content, community access, and special benefits.</p>
+        </header>
+        
+        <div class="membership-cards">
+            <!-- Basic Plan -->
+            <div class="membership-card">
+                <div class="card-header">
+                    <h2>Stargazer</h2>
+                    <div class="price">$9.99<span>/month</span></div>
+                    <p>Perfect for beginners</p>
+                </div>
+                <div class="card-body">
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> Weekly newsletter</li>
+                        <li><i class="fas fa-check"></i> Access to basic articles</li>
+                        <li><i class="fas fa-check"></i> Monthly webinars</li>
+                        <li><i class="fas fa-check"></i> Community forum access</li>
+                        <li><i class="fas fa-check"></i> 10% discount on merch</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+            
+            <!-- Premium Plan (Featured) -->
+            <div class="membership-card featured-card">
+                <div class="featured-badge">Most Popular</div>
+                <div class="card-header" style="background: var(--primary);">
+                    <h2>Astronomer</h2>
+                    <div class="price">$24.99<span>/month</span></div>
+                    <p>For serious space enthusiasts</p>
+                </div>
+                <div class="card-body">
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> Everything in Stargazer</li>
+                        <li><i class="fas fa-check"></i> Exclusive research papers</li>
+                        <li><i class="fas fa-check"></i> Weekly live Q&A sessions</li>
+                        <li><i class="fas fa-check"></i> Early access to content</li>
+                        <li><i class="fas fa-check"></i> 25% discount on merch</li>
+                        <li><i class="fas fa-check"></i> Member-only events</li>
+                    </ul>
+                    <a href="#" class="btn" style="background: var(--secondary);">Join Now</a>
+                </div>
+            </div>
+            
+            <!-- Professional Plan -->
+            <div class="membership-card">
+                <div class="card-header">
+                    <h2>Cosmic Explorer</h2>
+                    <div class="price">$49.99<span>/month</span></div>
+                    <p>For the ultimate space professional</p>
+                </div>
+                <div class="card-body">
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> Everything in Astronomer</li>
+                        <li><i class="fas fa-check"></i> Private mentoring sessions</li>
+                        <li><i class="fas fa-check"></i> VIP event invitations</li>
+                        <li><i class="fas fa-check"></i> Exclusive merchandise</li>
+                        <li><i class="fas fa-check"></i> 50% discount on all products</li>
+                        <li><i class="fas fa-check"></i> Research collaboration opportunities</li>
+                    </ul>
+                    <a href="#" class="btn">Become VIP</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-content">
+            <h2>Why Join Our Cosmic Community?</h2>
+            <p>Our membership program is designed to connect space enthusiasts of all levels with the latest discoveries, research, and like-minded individuals. Whether you're a casual stargazer or a professional astronomer, our community offers resources to deepen your understanding of the cosmos.</p>
+            
+            <h2>Membership Benefits Explained</h2>
+            <p>Each tier of membership builds upon the previous one, offering additional resources and opportunities. Our most popular Astronomer plan provides the perfect balance of content and community, while our Cosmic Explorer plan offers unparalleled access to experts and exclusive materials.</p>
+            
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>Can I switch plans later?</strong> Yes, you can upgrade or downgrade your plan at any time through your account settings.</p>
+            <p><strong>Is there an annual payment option?</strong> Absolutely! We offer 15% off when you pay annually for any plan.</p>
+            <p><strong>Do you offer student discounts?</strong> Yes, students receive 20% off all plans with valid student ID verification.</p>
+        </div>
+    </div>
+    
+    <div id="footer-placeholder"></div>
+
+    <script>
+    // Load navbar and footer
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navbar loader
+        
+        // Footer loader
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(err => console.log('Failed to load footer:', err));
+    });
+    </script>
+</body>
+</html>

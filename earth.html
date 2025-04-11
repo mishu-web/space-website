@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            color: #2c3e50;
+            margin-top: 60px; /* for fixed navbar */
+        }
+        
+        .content-container {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            color: #2c3e50;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 20px;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #16a085;
+            margin-top: 25px;
+        }
+        
+        h3 {
+            color: #27ae60;
+            margin-top: 20px;
+        }
+        
+        b {
+            color: #2c3e50;
+        }
+        
+        .key-concept {
+            background-color: #e8f4f8;
+            padding: 15px;
+            color: #16a085;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .earth-fact {
+            font-style: italic;
+            color: #7f8c8d;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }
+        
+        .image-container .caption {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="main-content">
+        <div class="content-container">
+            <h1>Introduction</h1>
+            
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Earth from space">
+                <div class="caption">The Blue Marble - Earth as seen from space</div>
+            </div>
+            
+            <p>Earth, our pale blue dot, is the only known planet in the universe confirmed to host life. This dynamic world, third from the Sun in our solar system, is a complex system of interacting spheres - the atmosphere, hydrosphere, geosphere, and biosphere. With its perfect balance of conditions, Earth stands as a unique oasis in the cosmic desert.</p>
+
+            <p>This article explores Earth's formation, structure, systems, and the delicate balance that makes it habitable. Understanding our planet helps us appreciate its fragility and our responsibility to protect it.</p>
+
+            <h1>1. Earth's Basic Profile</h1>
+
+            <div class="key-concept">
+                <h2>Key Characteristics:</h2>
+                
+                <h3>Orbital Characteristics:</h3>
+                <p><b>Average distance from Sun:</b> 149.6 million km (1 astronomical unit)<br>
+                   <b>Orbital period:</b> 365.25 days<br>
+                   <b>Rotation period:</b> 23 hours, 56 minutes, 4 seconds</p>
+                
+                <h3>Physical Properties:</h3>
+                <p><b>Diameter:</b> 12,742 km (equatorial)<br>
+                   <b>Mass:</b> 5.97 × 10²⁴ kg<br>
+                   <b>Surface area:</b> 510 million km² (70.8% water, 29.2% land)</p>
+                
+                <h3>Atmospheric Composition:</h3>
+                <p>78% nitrogen, 21% oxygen, 1% other gases (including argon and carbon dioxide)</p>
+            </div>
+
+            <h1>2. Earth's Structure</h1>
+            
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrLyVpU4olfQYAvA-Wm2-SDmWJ2GKKVVVcNw&s" alt="Earth's internal structure">
+                <div class="caption">Earth's layered internal structure</div>
+            </div>
+            
+            <p>Earth consists of several concentric layers:</p>
+
+            <h2>A. Crust</h2>
+            <p>The thin outer shell (5-70 km thick) composed of continental (granitic) and oceanic (basaltic) crust. The crust and uppermost mantle form the lithosphere.</p>
+
+            <h2>B. Mantle</h2>
+            <p>A 2,900 km thick layer of silicate rock that flows slowly over geological timescales, driving plate tectonics.</p>
+
+            <h2>C. Outer Core</h2>
+            <p>A 2,200 km thick layer of liquid iron and nickel that generates Earth's magnetic field through the geodynamo effect.</p>
+
+            <h2>D. Inner Core</h2>
+            <p>A solid iron-nickel sphere with temperatures reaching 5,700°C (similar to the Sun's surface) but remaining solid due to immense pressure.</p>
+
+            <h1>3. Earth's Spheres</h1>
+
+            <div class="image-container">
+                
+                <div class="caption">Earth's interconnected spheres</div>
+            </div>
+
+            <h2>A. Atmosphere</h2>
+            <p>Five main layers extending to 10,000 km:
+            <ol>
+                <li><b>Troposphere:</b> Weather occurs here (0-12 km)</li>
+                <li><b>Stratosphere:</b> Contains ozone layer (12-50 km)</li>
+                <li><b>Mesosphere:</b> Meteors burn up here (50-85 km)</li>
+                <li><b>Thermosphere:</b> Aurora occurs here (85-600 km)</li>
+                <li><b>Exosphere:</b> Merges with space (600+ km)</li>
+            </ol>
+            </p>
+
+            <h2>B. Hydrosphere</h2>
+            <p>All of Earth's water (1.386 billion km³), including oceans (97.5%), ice caps, groundwater, lakes, and atmospheric water vapor.</p>
+
+            <h2>C. Geosphere</h2>
+            <p>The solid Earth from core to crust, including the dynamic system of plate tectonics that shapes continents and ocean basins.</p>
+
+            <h2>D. Biosphere</h2>
+            <p>The global ecological system integrating all living organisms and their relationships, extending from deep crust to lower atmosphere.</p>
+
+            <h1>4. Earth's Dynamic Systems</h1>
+
+            <h2>A. Plate Tectonics</h2>
+            
+            <div class="image-container">
+                <img src = "https://cdn.britannica.com/45/102045-050-723FF773/Earth-plate-movement-tectonic-plates-directions-euraisian-pacific-african.jpg" alt="Plate tectonics">
+                <div class="caption">Earth's tectonic plates and their movement</div>
+            </div>
+            
+            <p>Earth's lithosphere is divided into 7-8 major plates and many minor plates that move at 1-10 cm/year, causing earthquakes, volcanoes, and mountain building.</p>
+
+            <h2>B. Water Cycle</h2>
+            <p>The continuous movement of water through evaporation, condensation, precipitation, and runoff that sustains all terrestrial life.</p>
+
+            <h2>C. Carbon Cycle</h2>
+            <p>The biogeochemical cycle that regulates Earth's climate by moving carbon between atmosphere, oceans, biosphere, and geosphere.</p>
+
+            <h2>D. Magnetic Field</h2>
+            <p>Generated by the geodynamo in the outer core, this invisible shield protects Earth from solar wind and cosmic radiation.</p>
+
+            <h1>5. Earth's Habitability Factors</h1>
+
+            <div class="image-container">
+                <img src="https://i0.wp.com/aerospacelectures.com/wp/wp-content/uploads/2024/08/what-is-the-goldilocks-zone.jpg?fit=1280%2C720&ssl=1" alt="Goldilocks zone">
+                <div class="caption">Earth's position in the Sun's habitable zone</div>
+            </div>
+
+            <h2>A. Goldilocks Zone</h2>
+            <p>Earth orbits in the Sun's habitable zone where liquid water can exist stably on the surface.</p>
+
+            <h2>B. Atmospheric Composition</h2>
+            <p>The right mix of gases maintains temperature and provides breathable air while blocking harmful radiation.</p>
+
+            <h2>C. Moon Stabilization</h2>
+            <p>Our large Moon stabilizes Earth's axial tilt, preventing extreme climate variations.</p>
+
+            <h2>D. Magnetic Protection</h2>
+            <p>The magnetosphere deflects most solar wind particles that would otherwise strip away the atmosphere.</p>
+
+            <h1>6. Earth's Future</h1>
+
+            <h2>A. Natural Changes</h2>
+            <p>Over billions of years, the Sun's increasing luminosity will eventually evaporate Earth's oceans (in about 1 billion years).</p>
+
+            <h2>B. Human Impact</h2>
+            
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYUdWjYccH2hvMvyQ8Ax6QLHGH51-mnBEwVA&s" alt="Climate change impact">
+                <div class="caption">Human activities affecting Earth's climate</div>
+            </div>
+            
+            <p>Climate change, biodiversity loss, and pollution represent urgent challenges to Earth's life-support systems.</p>
+
+            <h2>C. Planetary Stewardship</h2>
+            <p>Understanding Earth systems helps us develop sustainable practices to protect our planet's future.</p>
+
+            <div class="earth-fact">
+                <p>Did you know? Earth is not a perfect sphere - it's an oblate spheroid that bulges at the equator due to its rotation. The equatorial diameter is 43 km larger than the polar diameter!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Simple navbar loader
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Add 60px padding to body to prevent navbar from hiding content
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+</body>
+</html>

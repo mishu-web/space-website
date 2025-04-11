@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Exploration Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(to right, #000428, #004e92);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
+            display: flex;
+            margin-bottom: 4rem;
+            align-items: center;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .gallery-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .image-container {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 150, 255, 0.4);
+        }
+
+        .info-container {
+            flex: 1;
+            padding: 30px;
+            position: relative;
+        }
+
+        .info-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #4facfe, transparent);
+        }
+
+        .gallery-item:nth-child(odd) .info-container::before {
+            right: 0;
+        }
+
+        .gallery-item:nth-child(even) .info-container::before {
+            left: 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #4facfe;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .date {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            background: linear-gradient(to right, #000428, #004e92);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item, .gallery-item:nth-child(odd) {
+                flex-direction: column;
+            }
+
+            .info-container::before {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <script>
+    // Simple navbar loader
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Add 60px padding to body to prevent navbar from hiding content
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+    <header>
+        <h1>Cosmic Exploration Gallery</h1>
+        <p class="subtitle">A journey through space research and discovery</p>
+    </header>
+
+    <div class="gallery">
+        <!-- Item 1 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Hubble Deep Field">
+            </div>
+            <div class="info-container">
+                <h2>Hubble Deep Field</h2>
+                <p class="date">December 18, 1995</p>
+                <p>The Hubble Deep Field image revealed thousands of galaxies in a tiny patch of sky, fundamentally changing our understanding of the universe's scale and the number of galaxies it contains.</p>
+                <p>This image was assembled from 342 separate exposures taken with the Wide Field and Planetary Camera 2 over ten consecutive days.</p>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Pillars of Creation">
+            </div>
+            <div class="info-container">
+                <h2>Pillars of Creation</h2>
+                <p class="date">April 1, 1995</p>
+                <p>These towering tendrils of cosmic dust and gas in the Eagle Nebula are a stellar nursery where new stars are forming. The tallest pillar is about 4 light-years high.</p>
+                <p>Recent observations suggest the pillars may have already been destroyed by a supernova explosion, but we won't see this from Earth for another thousand years due to the speed of light.</p>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Mars Perseverance Rover">
+            </div>
+            <div class="info-container">
+                <h2>Perseverance Rover</h2>
+                <p class="date">February 18, 2021</p>
+                <p>NASA's Perseverance rover landed in Jezero Crater on Mars to search for signs of ancient microbial life and collect samples for future return to Earth.</p>
+                <p>The rover carries the Ingenuity helicopter, the first aircraft to achieve powered, controlled flight on another planet.</p>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Black Hole Visualization">
+            </div>
+            <div class="info-container">
+                <h2>First Black Hole Image</h2>
+                <p class="date">April 10, 2019</p>
+                <p>The Event Horizon Telescope collaboration released the first-ever image of a black hole's shadow in the center of galaxy M87, located 55 million light-years away.</p>
+                <p>The black hole is 6.5 billion times more massive than our Sun, with an event horizon larger than our entire solar system.</p>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="James Webb Space Telescope">
+            </div>
+            <div class="info-container">
+                <h2>James Webb Space Telescope</h2>
+                <p class="date">December 25, 2021</p>
+                <p>The most powerful space telescope ever launched, JWST observes the universe in infrared light, allowing it to see the first galaxies that formed after the Big Bang.</p>
+                <p>Its 6.5-meter primary mirror is made of 18 hexagonal segments that unfolded after launch, protected by a tennis court-sized sunshield.</p>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Solar Probe">
+            </div>
+            <div class="info-container">
+                <h2>Parker Solar Probe</h2>
+                <p class="date">August 12, 2018</p>
+                <p>NASA's mission to "touch the Sun" is studying the solar corona and solar wind at closer distances than any previous spacecraft.</p>
+                <p>The probe uses Venus gravity assists to gradually shrink its orbit, eventually coming within 6.2 million km of the Sun's surface, protected by a revolutionary heat shield.</p>
+            </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="SpaceX Starship">
+            </div>
+            <div class="info-container">
+                <h2>SpaceX Starship Prototype</h2>
+                <p class="date">2020-Present</p>
+                <p>SpaceX's fully reusable super heavy-lift launch vehicle designed for missions to the Moon, Mars, and beyond. When complete, it will be the most powerful rocket ever built.</p>
+                <p>The stainless steel design uses Raptor engines burning methane/oxygen, chosen for potential in-situ resource utilization on Mars.</p>
+            </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="gallery-item">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1501862700950-18382cd41497?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Neutron Star Merger">
+            </div>
+            <div class="info-container">
+                <h2>Neutron Star Merger</h2>
+                <p class="date">August 17, 2017</p>
+                <p>• Two ultra-dense star corpses (20km wide but 1-2 Suns mass)<br>
+                    • Spiral together at 60% light speed before collision<br>
+                    • For milliseconds, forms the densest matter in universe<br>
+                    • Ends as black hole or massive neutron star</p>
+                    
+       

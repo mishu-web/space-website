@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALAXY</title>
+    <link rel="stylesheet" href="telescopeworkshop.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #e5eee5;
+            background-color: #180642;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin-top: 60px; /* for fixed navbar */
+        }
+        .content-container {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #ece6f0;
+            border-bottom: 2px solid #9c27b0;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        h2 {
+            color: #efe9f1;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #d9cfdb;
+            margin-top: 20px;
+        }
+        b {
+            color: #eae1f5;
+        }
+        .key-concept {
+            background-color: #c37dce;
+            padding: 15px;
+            border-left: 4px solid #9c27b0;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .galaxy-fact {
+            font-style: italic;
+            color: #7e57c2;
+            background-color: #5916bd;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #7e57c2;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin: 10px 0;
+            border: 1px solid #9c27b0;
+        }
+        .image-container .caption {
+            font-style: italic;
+            color: #b39ddb;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 10px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <div class="main-content">
+        <div class="content-container">
+            <h1>GALAXY</h1>
+            
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Galaxy cluster">
+                <div class="caption">A cluster of galaxies in the distant universe</div>
+            </div>
+            
+            <p>Galaxies are the fundamental building blocks of the universe - vast cosmic islands containing billions of stars, gas, dust, and mysterious dark matter, all bound together by gravity. These magnificent structures come in various shapes and sizes, each telling a unique story about the formation and evolution of our cosmos.</p>
+
+            <p>This article explores the nature of galaxies, their classification, formation processes, and the role they play in the large-scale structure of the universe. From our home Milky Way to the most distant galaxies observed, we'll journey through these celestial marvels that shape our understanding of the universe.</p>
+
+            <h1>1. What is a Galaxy?</h1>
+
+            <div class="image-container">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGBoYGBcXGBgWGhogGBobGhsaHxgaHSggGBolHxgaITEhJSkrLy4uGh8zODMsNygtLisBCgoKDg0OGxAQGy0mICUvLy0tLS0tLS0tLy0tLy0tLS8tLS8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALEBHQMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAEBQIDAAEGB//EADkQAAECBAQEBAUEAQQCAwAAAAECEQADITEEEkFRBWFxgSKRofATMrHB4QZC0fEUFSNSYnKCM6LC/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QAJxEAAgICAgEDBQADAAAAAAAAAAECEQMhEjFBEyJRBDJCYXGBkcH/2gAMAwEAAhEDEQA/APE4vyDKfEoENQh3JYEODS5IcW13oSqJJggMe9z/AH/cbB9/aMKTbWNqQzcw9C52qNLO2xG4jGI6e/fsRKYAyWJdquGAL6F3UGY6VPc7LbcvY3jQHIFjbflTSmjRjEdPza+mlvpvGFW7mjX0d/rXvFpU4DuSKOTRqMGbQ5uRcW1iUeYv+IBiOW0ES0ABKiQxJDA1DZXLbHNTodoyXIJrRgQ/iSkl60BZz+BGOS23K1eQ1gg7NltLRF/Z6+kSdg3nE5qSfm7UIcDaMzIHUSdzRt7UH8NGwnbbzi5I+2301/uJIQNb++cAJWqWqhLtVnttTyEaIAcEVp9yevezBoYBKWBUohhSj+UCTmc6jTfv/WsFqgJ2QRLrViNf56QVNykqLHKHZtAWA984FA39+2iXeMpAcbZBQ7RdhyxBJISaEhiWNyASHOociojakElySoqq5JJL6km8XowJ/gfjaMguvINNUVVJqb/SvOIiWToYeTOGHIFF6B661L00v6c4omzEhsozCsM419wikn9orQN/K1bD1iz/ABSBUXgiVhlLLBnqq4H1ueUWzJACiCsUepN2pTXlASGbF6pfaNpl/XWgi4Fgpm0BJZ75ta3AqNm1rSRAsNFTxgPsc4kUbRrJACRB3jRjZEbqO/TSCajPhHQekbTh8xAGr6ijfTvBX+Y1hVmf69IGRNy1guvAqu9lMyW1CKvf7e9oqWgi4I68w49C8FhYIAL/ANxUoPACgciMAghaDffWIBEAJWo5iSo1NSTqS5J97xIJfbW/IE3Pu2sVtBkichMxChLzAZXQo5sxHzDwsySXIGgOt4zegpW6Bokjn9tP6gni05K5q1pliWCokIGbwg1ArVoHB197vGi9bNJJPRpKCp2D0J7JDk9gCekSCbDta/eLZkl0heZJckEOCoHcpux3iKAPZ1jLYHowEMWAroS9hz6xiQKgipZi9AA+YM1dK6ZYmU9RZqNfX0iwSwbO72NfM6mCAhLQSaDfR/rcdY2JZB9dOvnBuGBT4gWUPf3iv4N39vDVoVMHEklqcvqPOkGYbAJVqc2lA2l6nR+8HYOXKoldnuKUItZ9h53ghUhABA8TtloQTfTeGUF2K5voXiSAG/cPo1affSAZ6xoO/anKh+sMcWsk6gtlPTV9/wAQvKNx2H8v38onN+B4LyykqJv6+6XjWSLVpcnbR739YIRha/xXrE7K0UpkhqOCSRoAQwp1f7RdhMBmNXblDXA8KCglT+B6mtH1a2whwrDJSCkEE6BIALc+bfR4eMb2+icpVpdlfAP07L+In46jLQoEgkVLez5R0XGP8bDsmUnO8sgKIpoxvbxP5wiTiCCPCVli76032NujiFc+epQzKJJsHrQAU5CvpFvWjBe0l6Dm7kyOKx6llwwajVbrC74RJKiw71/MGJkVO4GlYJlYQGpJDJOl+sQuU3bL1GGkL5eCcFWYDKkFjq5oANYrmpzMlKf5O7w9l8GWslKJZKkgvrapLDRoxXCQCA+j0ZrO72besU4uifJWJl4IIUAQ9K1Z3Fwdor/0xZqkaP8AbzeOgOGSkJUVh708RAFgRu4doHxExS1OwSAC4FHcku//ACqPKGcYiqUhNOwExAddB3/iA1S3t5Q8x2KM1QMyrAJ2t0F4E+Ak2/qE1eh1dbExRGyiDsTKALVI+nthFPw/Yv0hRgZSY0RBRQGemobtdr/mK1IjGKFRERatA0iBTGMbSTE0of3aICMaDZmgY/3zrr5CMCdDE0Aamwo1e1I0RtGASYREH+60ixIDAC5u9BelQXZr2iRU5JOprb7MPSMGzEpYh6jvZ7UtEikt796xI1u7C1fT1i1Af3/EEWzJcl0vz3D6aX1vF+DlnMwFXeCMLhXFSw1fQ1bn9qh+Tjg0hPxFUzKY5SDlA519BDxjtCSlpi7E4XKSCoGrUera1H5itMge/q0M8XJI8NCQ9WANzci9TrAyjpy+5sO8aWmCO1ooEurnm721+zROaza7s1mdvKsEzMLllomJIL5nBsCk2qauK92gMpbV6WNPy3lEueizhTKJwSxArz3isofmCXpf8b+UErR4jZn0BArWgNW+0OOD8CXOIygsX0On4e8JuTpDairYowOAVMW2UnUhmbRyWYDWPQZfAsJJwoVMUTNUVAJFNKAsbakQulTE4POkISpSgyiqpDFyAe1YBM4zPE1A4BsE6gA2JrDqUca32LKEsj1pFsjDgpUDlDP4dxsNv6vAU69AH379e3lDzhmDAScwIWQcouW5t+YswnDUulRQ+qXDAjcbi8I3aSHSptnP4rDTUpzFJQhZo7VuwfVmaKcFhHIzOEuMzNYbc2PrHV4yWucrNNLhI8I2dywGp/MD/wCnuWALfKKG4uOfMwGvjoZN1TEqkeFQy2JqLMDRjcgiB52ZqBr+7+3jpv8ATwhxU5gKPTk45MCAYpxXDlqUczeEv9iz9N4XpaC9u2c9hp0xIovK4u52sesDzUvr5W96R0OM4YEklLku6dWGhar9IB/0d2anf20Zt9GSXYuBCQAzg1eLRPQr5nBoAw7E/iL5+By0FTS1W5RTOwK/3JIetdYKm0K4Jm8cULIAypYM6UnxWqXq5aFwllJJ86QxOGIoRtc9jTWK1p7iz10A+0O5XsVRrSNT8GrKkgULqFN7n/6jyhaqS31+8PZKEKU2gpmA+zgb3i1HD0KUAkpLvUOw5/1sYso8uiLlx7OcMkVpTf8AsPEf8cC+tvp5UI7Q4xGHSLaX5tqKe3gBSLj3S0LVDXZRL4WpebKl2SVGooBUmsAmWWygXINg/hB1uzEuLUG0NZbg7+bdI0uU30hUnd+B20kl5EqkH3yjWgDANyvV6w4xkkMKpN9n00u35hYURnoCdi+LMprVulLtSnukWTAlks71zEv/AOrXo31i/DYBSpa5g+VGUE7ZnA70fpAcklbCotukDZNgWDOW382rbdokEvXnYe7fyIvw8hSlJQkElRbK4S5GlS3cxPDYYqLAOWdtWFS55DWGoW0VoTbyhjgsES5NAPW1gb3ERw8ih1pd21am9+0NMNMUgAJeobWr/X+oeKXkSTbWiRDJDUdgK1Jo49XhjwiYJBebLzIy5gCwOoBB3dxAGES5BKXy2HmfufIQxx+LzJKcqWzAhX7gHqkbjrDqf5COH4kMVjJKwol0pHyBOruoAuBmqTU1FnoI54khnY60+kEzJjlmoB7PWvpGGU43o/hNnoxp9455zcjohBQ0akqcEnyiSMGtRoNWJ6n+41Iw7n+PdOkdRwHgrzEjNlSrU0FBekLFOWhpNR2A8M4YlSspUxyvZravypDWRxJWFeXKUXqFA1TQEAgvRs14t4nhkCafhrJCSyiARUMGDXsS/OJ4fDS2ADOWpqHLG9ixJ2gSlx1Hv5GjDlTl18AGC4eonOoBTlyGD1zZmrWn7qbaV6AYCWMngSgfDUtkh1HKba0fz1hzKwUsylTSkIcsAlvlG5a7XLamFJWmW65Fc5L5kqJALFql8rhri8TnJY1spGPqMuys5IysK5fFuK9AdLRb/joC0HM5YACzgaVZhAWEJmqK5gHyswOVJ7P7eMnrSu6UMC1ajp1/mIP6hdlvR8B6Vywf/kKipLsyQAFpKvM0axEDcQxAVkSFreoyurwmjlx50+0QODTTKkdrBhvvYRoy0l00BJcmx152H8UgvLJ6B6cU7DeH4RCkBWdIUKlyKAFnZ7mnOrQyxnBpKM0zwlwVFj2tYXpCT/FZLEFYJzPQB9HfbrFmGkozMFLBoVMMwoXZzVni0MtKqJSx27sIn8NZJShID1ymw3YaEtcQsxHCFEUOlNNW0vT6Q8RiV5kqBcAjNQOQKs9CB/MM5WIRMIKklOWrgqS5YgsxDOCRs3ODLLBdixxSOOkYEBL5S/n9ojL4SZgdieujfSOxnLkLVULCGAygXqxqKtXetYjgsfhwsy5agcrCpSDXVjVVNo6IuOlZGSltpHDn9OqVmOU03LXhLi+ErTowL8+UetqwQNFMRswTQu1EsDCni/BSQooFctjr/wBeUM8aoksrs8qXLZwbvUW7RbhZxSQXqP6MMeJYFSVGlR9R+HtCwK0YBOZzr0HT+YlF0yzVobcNlYdSFfHWUkklCgl3ZyX52Abet4Q8R+HnV8MKyAnKVM5GjtrB+BEvOgzHKAXI3+zloox8lAUr4ZJDkVuQlX4Bizk2iKikxVUFxFSiTBy0Fi3o4cHS9oGMhQDkFiWdqPC0NYKUVYiK5ySS5vDLCzUoWkqSFAEEguHGocWeKJzKLgMPdITd0PqrOfSaN/cGyycmVylJqWsSkUpv/MDykh9xyp9qQfKlppd2q+7m3JiL6vyh+KfYnJroqTKYuaitrPpyNfSGEkBIStkkqKkttbR3/dT7wyzoSZRMpDJBSUkmrk1PPpEZMhlOlLpNdeneKcK6Jc77CDhZZTShGoHhIr4ne9QGt5RvFuQlFMoDhIFNjzLhr7CGuGwQm0+Vic2x26Ct41iOFFDLIypJIHMDUaF/vBmtWGD3QJhMIWBDVO7cq7CtYpxsxqkUqBlbqoB60cVMdDgJSCk6gZXCjX/sxTppTTzhTxYIWQUijsHIL6c60FHhJ6joeH3bOfWpRYEsGOWjC5c86g16ww4fhnBCgGIo+9jUM3ToIqmyr5ksUizM5c1I30h9hMKSAL6kC1KMIjBWys3SB8NhwhaCwUlJD0ccvxzjo5CxKlEkEKSHD6uHyuGrCxUtlFQGWlAzM1Deun1h7xkS1YTOkFKyAUvdmBY11S3pDcqUqBxvjYilEKWitFFy5+W2ZXSpqYf4rByZbodnfMWs4Omt+0VcIwGeWZySfiKT8odgBc5gKH8Qxw2GStaSKoAr1prrHnzm0v6ehGCb/gDLExf+2xCVNlcu4YVIenR3NOzRPByQU0CU2L5b3NmcufdmZKZYIbMvQhm/DAM2sWJIzMoOSxD1SKM3WOTNkUO9/wDCsd9IVDhaUmgarmpNi+geNqyJUSJCLM+Wg2p2r0h98NhQJ8yPtFE3Bkmw8ifrSJRc+0Hmn2KJ5l5QSwBuASHtVw29PWKsNIlLUcqwkkECytaM+0MsThDltzqPSEeIWX1cNRve146026sR9aHM3C5glyEMWygDxU0SHYVty7xrCYeWM1QkBgHDEu7i9a0+0LJeLZLl70CW+mpgiRjrZhmBY1F3trHRGXF2yMo8lQVMwYUP3MbvQ/eKpKfhglR8P7S9ekE46aFICpYWNFJLOQn11DWeukJpGacFZVOkAUaxI91rHRq9LZz00tvRVxDHJC2S5pz8PMaF7V3hXicSqWsZsgC2UlVHFXcHQ1Ii3ESVAZlJHhclnr/ED4yb8RCWrlrVtLWtTlE6buyvJKqO7wPG8KtSZcukx2ZqB3o50fyeHGIlpoF2PvSPIpEw5gQ6LOCR9bkco6zgP6gmBSkTSVIJaoqnmD7tHTDK3pnHkwrtE/1LwVCiSkU3IqY884ng2VZm2Jrq/X+I9b/y0LL5nTcZhUBWscx+quDXWkUO0UnBNWhIZGnTPPVAgCJIFy7Hvr06vBs+QGLAvowvu/lFUuYsFjU0Ng1mH8xOHZSfRtaUhKXuakiorzGsXHFAScgUKnPlq2YBnJLB2BieGYhYWfES9vX1aFWKwykeKt6PenL0jodpaIKm9gM6UQMzFulKwIArtYQ5xWLKkBIZgG2cir190hUW2iU18FccvlAcwIMxZlZgjMrJmyuATQECjtSn2ixKaOE2bfyMXokJNTf6/lovn4XYNYgXHrFHFkVJMgiapRfm4HvpDeQpSQwN2cHfpAGGwpJDPdy3rDVGHKS3o9O8C2lYaTdDrgmH+IoJNMzDw05Xh7j+Fyzll5yoosSolgA/hem/sQi4fgJj5gPCGI3tqO8dDhZYI8ZqQwoXOUUt7rDx9y2hJPi9M5fB4ZyoKbWgN62I7QHjJDCgFW09tDPiE0pmZSGNfE2hb0p6mBJs4FNS5Fm/6gu78h6RyyaWjqim9i1SVByU0JYl7ihtrbXblHQcMnkKoGJIqNWLn6QDhsS6Mq2uKgWSe1We0PJWGBSEiVlq2cE33cXbbWFjd2mUlTVNA3F565uISUjMBUgDK5FdNWaNmfmlolZQQFZgapIrUUop66QLxeRMRMf4hSC7hJKTQZTUWB2irCzj4S7geZ/MRzT2y2KGkdRhU5JCyjMkmjEMkAKJKnLNXTnDnh6xLleJBAb+Lva3O0LcE65SnQAktUkPRiFGhJIYaxZjMQSGNWo7+/FEJR4q/wBFk71+zFYvMXYEbN7frDnBHMARHLJmFLAkEHX7R03BTZjHL6e9lHLWh1IkuXJrBH+PE5CBSClM0duPCq2ccpuxNiZBAMczxWQLgcq/xHY4oxyvGgxcGJSqJfG+RyswseWtDDQlCpIyvmbVmI6axAozkahqgAljSuzQdipAky8ik+Kpe9DrSncQ8em30Z9r5K8JOzyCmpWwIDtUMRXSos8SRlKVrlpKFJYroz1YOxLin1tCNGIANFM4rHWpxSVyyhIP/YW6jM76+sX+nfNEc64nHcQx80KVVKkrYOwDPS3UXihSGWUumgA8LAHwipbXnFnFZCfiuzIV4b0ettg2nKF01KgoqzVSW0S4FrbbxSKfLZOTXHRHFoJdJbKedoowvEFA1JvU3L3cudYZ4SalWbNs46jSFOIQEqW1jUc4pkxV7okseW7jJHV8N4gFSwpSh8RLIQGNQa2FNI6iUfCpMxy6fm0tYCPJ5CmSS9THoGG4muZLSpRFEiiaabPD4ZOWmTzxUVaOU4hLyzVBmCVG+3L1iEzB5yMmUOXCdOuY9IbcWkZh4rtQj3WKeAYZ0lBLqBor+OkPDHUqYs8lwtC3EYX4C0lYCgoP4TUUdiasajqBCTHYsqofzHYfqRBCmUDZho4Fife0cNjAPiEaVvFMipaJYpctsr+CWzVyj9zWeo5CB5UvMSxA6lotVjMiVS8+ZL0voxfk/XSrQGVDQv2/mI0iybLMHMc99/R9I6HhOIlk/wC4MzUawtcq5UpHKYdIzJd2fxMASz6DWm8NgoCYSj5Qo5XoWfw0Gu8VU6JOFnT4aUFiiQEpYZgB5neGWCw8ugJBoRS7u99beRjmZPEJiZZRZ6ne9hyhjw3DTlAzBUAOpq65at8vdqVjSnH4DGEvLO5wypckFIJUFB8xFQbCw1tC3EYmjAlnf++WkVfpvGIE0ieAUqSRmq4594r4xIShTJdSSzaUUbu1BCuerCoborThEzgsoLrRo/zUJduQDRzGLw3gKWqasD37R2fAsKhKkzVAul2UA77gE0hDxVS5kxa2yvYIBTaxp+4s55xz5I2rOmEqdFWAWyWKXVlYHUE62vSHfAVPLIJJOYuTq9fP8QglzShypKXYlgGuGt7sIO4Hi1KYk1uWFh7MCMqaGlG4sacQwzoK2cCrmpBJfXSObkIWFE11em5/Eeh4PDInoU2UGnY8xHNfqDBTJa0JKf2/MmrtuCaH7RP6nF+SKfTZb9rGHDsT/tpA8Th3DANlcBWXXtAOLxdQQ4ckKu1rsfrzi3AS0gOn/bagK25jsKkRGasqUAUhylhlFC5a5jmlGXFWzoUlydIFGMfmN9Pf8R0vBMYHaOWmSgFGjaOdfWGHD1qQBRxEXd2USVHpGGxIaCDPjlcHjKPbrDCXi3uW7xdZKRB49huLn82jn+IkK6w7UoZSbwnxUhRUGpoBvSnTrHJmlL+l8KQqwqCk0GZx4ir5RWj83DecD8Tm6XahPf6QyVgkpDZsyndRfwk6U2YnvCbGAlKg1yWID3h8cZSVMacop6BkLLlISFF6BVAekNcQlfwHIZbuA9KkGpapYbfWNYKT/tSyWADGrMTctFX6j4wkgIS7CoJ3brrrT6R6cMajC2edPI5SpIScVxQLJbUEttrA8uag0cVuSSzM/fSKcavMoXZq8zq0L5+JyEtpT6D31h4WpcmTnTjxRNLCYf8AjlNLValOcAylqUTp9v4grFFGUFBW6kjMCzPt02POK8DOR+6jihakGSFT+DaEsKn8+6R0f6cxiQpQclOUEopt4i7WjmJ00FdO0G8LwylqZL7sKk19N/7gQtS0abThs6ziOPQRYs79Nx1jm8NjymYVJdIe4q3rXSGXF5qRKCVBSZmY+HkwqSbF7cjHMYmbkZiPEK6n8WjoyNppkMSTTVHQ8V4hMxKWUXYkgsxsGcvakcnxjDlJqalm6MG9NIs/1FSVABRZ/vzjXG+JCYSUjKFNnqSSUhi73ryoYLkpRFUXGX6EU0M7ljtXUcqD8RXLm7OfWJ42cokk0So5mAypJGybUcj0gJaq7RBnQtoLQsvS70I+obWGmDmXDkE3D7XP9wqQv8a9rc4O4ckFYDgAlioigJ84DlQyjYxMzdTk0IL/AFOkOuG8bVISpMpRSlYAIJcXDuO3lCLHcKnSarllIJp/cV4eeAU0JS4zAUJD1HlCc09opxa0z0jgmIklGearNSibPar+XWHuFxUmcn4PypqokMwAZwX0Z+5jyFE5QANgSWOjhnHqPMQww2OIaruKs9KtX084os3hok8PlM9LxGHQCAleZD5gygS9iD/ECHApZRzEAg+ItQ00Zt4U/pviCQfh5mD2JPsHnHazuGy1SnzAJILk6ddxF0k1ZCTcZUebY7CBMxQBelwKVvrbvG8DKKFpFgbqow+nRo6XEcEQVHKvQFncEvcDQaNCPictSAUqtmZJoTyFd9uUcWSLj7mjuxzUvahxgEEzMpCk2HhdlDq1LteHWLkggMQxceINpo+tRHFcIX4lfF+IQE+EpJBcA89GEdFK4ov4KZfiJUoeJQBUlIZg6daVveBDIuLGlj9yKMbh/hlyQDo5oaW2expFCQlZOckJFkgguWD9m91gj/PSqY0yamYAXCCM1xVVKf1GHh8tRC5Z+YE3FQaaFnroYk3fX+iqVdkFJCj4X1ABrQ8m5CMRLyhlnVgNyP8AqPryMTGEWT8wJGynbrT0izC8OIcqUoZnNvoIWuXgPXk1LmJNiaVo48t4aYQkClwK6nTyvAEiUTdIejE0NbdiGLw2wmHJVkVUMGCKp1vvYBtPWJLFb6KOaSLcLNKjRyHu1K+3gjF4pMkmrrI7gai16P7MDzcSmWefygd9mcQjxs5U0ra7fM5FtH7Q0cLitdivIm99FfFMcVEhLh2LW1ofrEMHhFGWXchNSVFmY2FKv6PF+HlOQpQsL9KfzC79R8aQktLHzOFNbSwBqYvjx8VykRyZLfGJnEsbLUzFVnyBgkbEHp/UCnBqmgBDqNQWBcON9q+phThcUGIUS55VL8tdo67g/GESsMAgnxPmcMdiWpV6Nyjrww57Zx58rgqRyXE5WVAQzG7vUNS0IpQdXiNKkkwy/UOOM2aVO/hYsAGPM6k1rChOtDvt/UGaTloWDajsuxE0CiDpUmhq2j1D1pEZBQDfMyXH7WJuK3H1hfOUdaajvXvE02HsG+vl5wrdsaqQWhJ2Z7U3+0Pv0vxL4Mwrp8rF6hr/AEDeUI5J8NqCr++sRmT2AG598hpFIR47JzlyVDfjuPzLKiDlO/Te3OFc7EE1apFGL30f7QDipuxffawbm7kv2gfOWDGvQjLUt10rzhnK2LGNIsxU4EUDFzU82Ydm9YHnKzLUpKaOS1TrXnSJ4aWpebKkrIBUctWCakkbAO5tWAsViXpUb1NebadoVjr4IYiZoS4BLaa35RSrkw5be/uIxarPb7GkQNe1KARNjpBCPz7+sN5KpRlJAH+46lKUw5BKelFH/wBhtClKdzqfbQUhPav4Z4RlEdmj9TzVyP8AHm5VoAZLgEjvHOqVlIahT+5y/Kx+wieBUpJcMaGlCK0N3EF/DRQqcE1NHGzjWlKfxCRxpdDym3VgklCiyQMzkZQCdrAa3b6QRi8OuUcqhU9+3WI4fGFK0zEM6ClQegcF3IGji0FyJhxM9CZisoUuq6sAr56bt0t5FJNUBtrfgqlYmj6uaW6F7b00aHGF/UU3IUZqEAHM5ca8iIUYzChKssskoJICjqz3r9OUAzZhDB6ValP7hk3AVpTPQuFcRKzVaB4EkirkAmgG7KcgNQE7mN4oGellAO7M5qDodmoQY4XBTbFyLaO1Rp30rSGUn9QKSq+Y2BVTzA0jOaaqXRlCSlcezqMVg5gAZLAISCL1D1a72qI18FapZmZgEh81XBy9A4Fv6gfh36mWcuYAJsdANBDHE4xMxLBshqwarEMHezd6RnihJXFhWWcXUl/k1gsbIXLZUtAd3YAmzXakEon4ZDKJUkAsMrDV9BTbvCzBYFLNlNbjpGLwoClFfy7UF+enblE/TnW0iiyxvTY1VxiSouElCiCGS+x2DVYd9dYlieOIScoQbsSSVOLfLoaPCLB4wAEAeAqAs6rkMD3dxtFcyWP3kuk5VEmtKh9gHNoXda7HbV7GWJ46s1SoJbkxY0062EM+BcdWhYZIIN3p3G0cxiMhBSmpe9xS7N82lo2riJQlLGqj8xoUsP8AiK2IAPWCoyu2wSlFxpI6Xic9S5q5qg5JCUJFhrU70MC/5aZaQhbDwklmDEAs+bzgDCYpZynMoqTrT35wq4pJmTAVeIhJVmdmdm22byi7g0rSOdTTdMLxXHlTT8NAaWFJBULhjS16QvxGGyvlOYuACb05OSBtF6EIlhJCvGyX0A1BbtXrAOI4kkfOhRzKfMC2ZmoD+2mogrFq59iyy7qHQFLSSqlBv0ua9QKQbiceQlyfEqrZSAzAA31r5c4SYpYFqMbXp1d4N4bhvjZhnZKU5iSwokWFaGrNzrFcUWtIjmmntgc2aMxc9h6d41iVGUoA0cAt1FOt4XKnfMCauwOja2iqZNKlOavqSS7exCuQ3ELmVreIA0ptEFTnPIDbz9XirEqyUe/aA0FMLGMASzc+5aApuIgabMivPTT8xuRuId8XMmtTVhWjNW1QbX0MDmcKtSu7nuRrz15RT8QKYZSVFX7WDgsAAkChd/MUiClVehr38jGs1BCcUQKUoRSjvRnDOOr+pgdy7ub3qXL6c6mCsfKAloU7lQqzMD/xpqAUvtmDwBMUXY9Y0jR2TkFnLsWZx/2DEW2JHnFY8vIxpazyA5RHO28KOPpEsF1KNWoa1MOMNgwpGbK9o55OLHhT4WD7C51IDnzpB8rioCcoFb5nL+EGmza6xSPHySly8HR4BeHCGIAKQ5cs7FmG5vGp07DzA6D2McwvFly4BF2Nucbkz01A19+cK5vqh1Bd2OJ2GFx9/vEJEiYMpAuWFrhnY6UiOExSUp8QfYO3r7vBk7Hy6ZXQpq5ahzqx5bQvBPY3NrRfN8MvKVpJUbXytoWsXf0igSEqKQWYV5Uvaw9YXLxIDhObUuW8T76jVoK/ygQCfmZtxfQbPpyhoqxZOiczB/DK3JLU8Phv1FQ4ivhstCV5pkvOA4yOa8+tLRPEzyWSpICiGFTXao1sIbYXh8so+IlalEtmAYnMWJHUPB9FOWhXmcY78lK8YhThMsJGXwgWBa76l4v4UseEGgN/VzTlAuPwpFgbOxplF3529Ipw6ZvzAGgLFwE059xWA4NOxlNONHSzf1ApByJQlnYKrY3pYuD94pmY9Z2CbBI5U1cnaOc+MRUlydG9Bua25c4Iw2LzppQuGcUNRrp/ULbb2NxSWjqU4MJlhyGYKZ2O7coow81K1JQqiKULgHxCtLhvrCtUz4RBxKiXDpyu6gQyaCwrp3gOfx7OoZUpQQSAUuSRo+5t1irUV4oknJ+b/Z0vEVIfwKySgyRYEkjxAC4AZq15Rz8mcmjg2I6fd6/SFc7iS1UUot4qlzUubC5J1gSZiTQUFNK9X58oSW3dDx0qs6lePAUWpQM4+1ooncRAAre4FX0tpHOq4iAKAEh/md60uL/mB1TyWdzfXl/UO5/Aix/I0xE83JuBQHQU72MRnY8KCQWABAJ+YsNWLVrvpCoKykknvu2xiUicV5kJAAOxCbVavT6QIugyVhE0AEZtTZi4AYiupNvdBZ2Iaxa9H8h7+0BKxDgJelKs5DBhXapo+0Dic5ru5guYqh8lq5rc63384uTNJFXIZgdAAafT20ULmgENVojMnk6ABgKBgGDDuWKidSSYTofsNnZWBBF/Smlz+IEnK3L+XTytFEyfW4v7NYqUT9z9O/8AcBsMUWJm+IbbKcCzVYxUqY4HKNZwLirFqtXQm7gMaU6xiZuhJy7CumzjXnAGNyyHqSz1YVbUgGjs9DG5syqvTe78/rrcxSAA9WI5O/fSjxYlQPhyuokMXA7d6atemoxiwqcAa3165tXoeVoHUecbWlnp597eXoYrJ9YzZkiaD5+/OIlURUqu7CnS/wB40DACXJWxo/39/wAwbh8QwFKPU6330rCxL9n3H0+8WCaR606+zBToElYfOxBNNo1JmWgLO9/IN77/AMRJK7Ru2aqVDJc5QAd2NRdjo49RFyZz21YadIBK0FWXMoIBIz5ato6XZ7Ufubxr47oAzLJBJamUAgWH/IkV6CsEAxE1QbQGuhBY6DWvnBeFn1qXrrWEgmM1RUB2YsCxu97eoOsHIxIIAdi4qUm4DAUt1a8PB0TmrHM6aSpKR4laAOQaex3ifD+JfBVTwlwWFB1YG9PpHOy55Z2I51D3e2jwNOxR0J7/AEh/Up2J6VridXxjjjvlNSGLV5i8IxjlAfNStA2h6vrry0hTMnHnGkLZ9CG/Pv02nPI5OyuPEoKh6MeSweg+4ta+kTHESQz+2/qEUuabNetSR3ewFbtGInatR3vavsPCpjNDnGcRWteZaio2cl/Y/mKPjqCSQfCVMfEKkV+V3oDchqmF05Zcv3cMfW0Q+J1LnvAb2FLQynY5wOQb373iSMUQ7KIcEGpDg3Ba4NKQsSsv5/T+IuSrlatTWrQbbBSQUqa5oPfPnGxOpf3rAi5wHv28QViS7imsAyQfNxIVUkuBQZQxLgHWgZza9OcCzZt9vflA3xR39++0Z8QbX+3v1jWGib1O9mieISoMVAgqAVUM4VYiljpAxLneJicRV3LMHrRmatqEjvGQGSKywDv9r/yfWJIUKZnCXDkBy2pagUW0igKLhqNYi9C78jGpiiS7vc3rd9bnpBs1FhmPcntUa0YRUVHX3SJIWwFajkPe3eIhVXIcO7VY8nB+hgMKMLenv6RuSElSQSQCQ5uw3aIANd/T6REQBkX4gJCyEkFILAgNmANC27RWksffsRihoNLnysGeIvWMbsk/u8Rf3pGn+9b9PUesYoa7198/xGMTUtRAS6m2JpQAa8gB2iCY0g3HL8xiEvGN0TRE5H7v/BX0jIyMAqTFioyMjBZm/UfeJmMjIwCUu4jc23eMjIPgHkJw9x0/mF5096mMjI0ukCPbNzLDoIrjIyFHRIW7n7RZJ196iMjIPkz6NTLxERkZAMuixOkWTLxkZDAfZvDfOn/yH1iifc9YyMgMyKzEjGRkYLNaxNFj1H3jIyCgM0n7H6GIad4yMgGNq16n6iNqtGRkYxi/l/8AZX2jU256n6xkZGZka/b3+0YmxjIyME3L/d0//SYgYyMjGNRuMjIAT//Z" alt="Spiral galaxy">
+                <div class="caption">A classic spiral galaxy showing its structure</div>
+            </div>
+
+            <div class="key-concept">
+                <h2>Key Characteristics:</h2>
+                
+                <h3>Basic Composition:</h3>
+                <p><b>Stars:</b> Ranging from millions to trillions per galaxy<br>
+                   <b>Interstellar Medium:</b> Gas and dust between stars<br>
+                   <b>Dark Matter:</b> Invisible matter that dominates galaxy mass<br>
+                   <b>Supermassive Black Holes:</b> Found at most galactic centers</p>
+                
+                <h3>Typical Properties:</h3>
+                <p><b>Size:</b> 3,000 to 300,000 light-years across<br>
+                   <b>Mass:</b> 10<sup>7</sup> to 10<sup>13</sup> solar masses<br>
+                   <b>Distance Between:</b> Typically millions of light-years</p>
+            </div>
+
+            <h1>2. Types of Galaxies</h1>
+            <p>Edwin Hubble developed the basic classification system still used today:</p>
+
+            <h2>A. Spiral Galaxies</h2>
+            
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtTQ9Yfkd5s6IPIs1pCMPAiDLmebcAjAkfkw&s" alt="Spiral galaxy">
+                <div class="caption">NGC 4689, a beautiful example of a spiral galaxy</div>
+            </div>
+            
+            <p>Characterized by rotating disks with spiral arms:</p>
+            <ul>
+                <li><b>Normal Spirals (S):</b> Clear spiral structure (e.g., Milky Way, Andromeda)</li>
+                <li><b>Barred Spirals (SB):</b> Central bar-shaped structure (e.g., NGC 1300)</li>
+            </ul>
+
+            <h2>B. Elliptical Galaxies</h2>
+            
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzUL3Kq1QXL1sBlzlawyPt9V1xVPE-YLPFkQ&s" alt="Elliptical galaxy">
+                <div class="caption">M87, a giant elliptical galaxy with a famous jet</div>
+            </div>
+            
+            <p>Smooth, featureless ellipsoidal shapes:</p>
+            <ul>
+                <li>Range from nearly spherical (E0) to highly flattened (E7)</li>
+                <li>Contain older stars with little gas/dust (e.g., M87)</li>
+            </ul>
+
+            <h2>C. Irregular Galaxies</h2>
+            
+            <div class="image-container">
+                <img src="https://www.thoughtco.com/thmb/OhLz1A2kOJLId8xMfSCw7h34hus=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1330px-M82_Chandra_HST_Spitzer-98ad247c47a24d0284aed82e246d442b.jpg" alt="Irregular galaxy">
+                <div class="caption">The Large Magellanic Cloud, a nearby irregular galaxy</div>
+            </div>
+            
+            <p>Lack distinct shape, often chaotic appearance:</p>
+            <ul>
+                <li>Commonly result from galactic collisions</li>
+                <li>Often rich in gas and star-forming regions (e.g., Large Magellanic Cloud)</li>
+            </ul>
+
+            <h2>D. Special Types</h2>
+            <ul>
+                <li><b>Lenticular Galaxies:</b> Intermediate between spiral and elliptical</li>
+                <li><b>Dwarf Galaxies:</b> Small, low luminosity galaxies</li>
+                <li><b>Active Galaxies:</b> Extremely luminous cores (quasars, blazars, radio galaxies)</li>
+            </ul>
+
+            <h1>3. Galaxy Formation and Evolution</h1>
+
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_qzjkf2jt5DVCDpUBilNS_Ti_7wbbeWIwTg&s" alt="Hubble Deep Field">
+                <div class="caption">Hubble Deep Field showing galaxies at various stages of evolution</div>
+            </div>
+
+            <h2>A. Formation Theories</h2>
+            <p>Galaxies formed from density fluctuations in the early universe:</p>
+            <ul>
+                <li>Small structures merged to form larger ones (hierarchical model)</li>
+                <li>First galaxies emerged about 400 million years after the Big Bang</li>
+            </ul>
+
+            <h2>B. Evolutionary Processes</h2>
+            <ul>
+                <li><b>Mergers:</b> Galaxies collide and combine over billions of years</li>
+                <li><b>Secular Evolution:</b> Slow changes from internal dynamics</li>
+                <li><b>Environmental Effects:</b> Galaxy clusters influence member galaxies</li>
+            </ul>
+
+            <h1>4. Our Home: The Milky Way</h1>
+
+            <div class="image-container">
+                <img src="https://cdn.britannica.com/29/148329-050-269A9EFE/night-sky-Milky-Way-Galaxy.jpg" alt="Milky Way galaxy" height 100px>
+                <div class="caption">Artist's conception of our Milky Way galaxy</div>
+            </div>
+
+            <div class="key-concept">
+                <h2>Milky Way Profile:</h2>
+                <p><b>Type:</b> Barred spiral galaxy (SBbc)<br>
+                   <b>Diameter:</b> ~100,000 light-years<br>
+                   <b>Mass:</b> ~1.5 trillion solar masses<br>
+                   <b>Stars:</b> 100-400 billion<br>
+                   <b>Age:</b> ~13.6 billion years<br>
+                   <b>Structure:</b> Disk, bulge, halo, and spiral arms</p>
+            </div>
+
+            <h1>5. Galaxy Clusters and Large-Scale Structure</h1>
+
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToh2LI5HzWbL9CgzsQNni16ijO6GfBadvsuw&s" alt="Galaxy cluster" height 300px>
+                <div class="caption">The Coma Cluster containing thousands of galaxies</div>
+            </div>
+
+            <h2>A. Galaxy Groups and Clusters</h2>
+            <ul>
+                <li><b>Groups:</b> Small collections (few dozen galaxies)</li>
+                <li><b>Clusters:</b> Hundreds to thousands of galaxies</li>
+                <li><b>Superclusters:</b> Clusters of clusters (largest known structures)</li>
+            </ul>
+
+            <h2>B. Cosmic Web</h2>
+            <p>Galaxies form along filaments of dark matter, creating a web-like structure across the universe with vast voids between.</p>
+
+            <h1>6. Studying Galaxies</h1>
+
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFPkQJKG0yZVUha1QYlkfEKDOuaOqYZkrDw&s" alt="JWST deep field">
+                <div class="caption">James Webb Space Telescope's deep field image</div>
+            </div>
+
+            <h2>A. Observation Techniques</h2>
+            <ul>
+                <li>Optical and radio telescopes</li>
+                <li>Spectroscopy to measure composition and motion</li>
+                <li>Space telescopes (Hubble, JWST) for deep observations</li>
+            </ul>
+
+            <h2>B. Current Research Frontiers</h2>
+            <ul>
+                <li>Nature of dark matter and its role in galaxy formation</li>
+                <li>Formation of the first galaxies (James Webb Space Telescope discoveries)</li>
+                <li>Supermassive black holes and galaxy evolution</li>
+            </ul>
+
+            <div class="galaxy-fact">
+                <p>Did you know? The observable universe contains an estimated 2 trillion galaxies! Most are small, faint dwarf galaxies, and we've only cataloged a tiny fraction of them.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Simple navbar loader
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Add 60px padding to body to prevent navbar from hiding content
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+</body>
+</html>

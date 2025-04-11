@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACEXPLORE - Telescope Workshops</title>
+    <style>
+        :root {
+            --primary: #3a0ca3;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--dark);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .tagline {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        nav {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+            gap: 2rem;
+        }
+        main {
+            flex: 3;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        aside {
+            flex: 1;
+        }
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(58, 12, 163, 0.2);
+        }
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), #ff4da6);
+        }
+        h1, h2, h3 {
+            color: var(--primary);
+        }
+        .workshop-img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .close-btn {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        label {
+            font-weight: 500;
+        }
+        input, select {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .price-display {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-align: center;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SPACEXPLORE</div>
+        <div class="tagline">Discover the cosmos through our lenses</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+          
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <article>
+                <h1>Stargazing Telescope Workshops</h1>
+                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Telescope Workshop" class="workshop-img">
+                
+                <section id="about">
+                    <h2>About Our Workshop</h2>
+                    <p>At SpaceXplore, we bring the wonders of the universe closer to you through our hands-on telescope workshops. Founded in 2015 by a team of astronomy enthusiasts, our local company has been helping people of all ages explore the night sky with professional-grade equipment.</p>
+                    <p>Our workshops are designed for both beginners and intermediate astronomy lovers. You'll learn how to operate different types of telescopes, understand celestial coordinates, and observe planets, stars, and deep-sky objects.</p>
+                </section>
+                
+                <section id="workshops">
+                    <h2>Workshop Details</h2>
+                    <p>Our signature 3-hour workshop includes:</p>
+                    <ul>
+                        <li>Introduction to telescope types and their operation</li>
+                        <li>Hands-on practice with our premium telescopes</li>
+                        <li>Night sky navigation techniques</li>
+                        <li>Observation of visible planets and celestial objects</li>
+                        <li>Astrophotography basics (for advanced workshops)</li>
+                        <li>Q&A session with our astronomy experts</li>
+                    </ul>
+                    <p>All equipment is provided, though you're welcome to bring your own telescope for personalized guidance.</p>
+                </section>
+                
+                <section id="schedule">
+                    <h2>Upcoming Schedule</h2>
+                    <p>Workshops are held every Friday and Saturday evening, weather permitting. Special lunar observation events are scheduled during full moon phases.</p>
+                    <p>Each session is limited to 15 participants to ensure personalized attention.</p>
+                </section>
+                
+                <section id="gallery">
+                    <h2>What You'll See</h2>
+                    <p>Depending on the season and weather conditions, you may observe:</p>
+                    <ul>
+                        <li>Jupiter and its Galilean moons</li>
+                        <li>Saturn's magnificent rings</li>
+                        <li>Lunar craters and maria</li>
+                        <li>Mars (during opposition)</li>
+                        <li>Bright star clusters like the Pleiades</li>
+                        <li>Andromeda Galaxy (on clear nights)</li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+        
+        <aside>
+            <div class="sidebar-widget">
+                <h3>Member Login</h3>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3>Book Your Workshop</h3>
+                <p>Join our next telescope workshop and explore the cosmos!</p>
+                <button id="bookBtn" class="btn btn-accent">Book Now ($85)</button>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3>Upcoming Events</h3>
+                <ul>
+                    <li>Lunar Observation Night - July 20</li>
+                    <li>Perseid Meteor Shower Watch - Aug 12</li>
+                    <li>Jupiter Opposition Special - Sep 26</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Workshop Booking</h2>
+            <div class="price-display">$85 per person</div>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="participants">Number of Participants</label>
+                    <select id="participants" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Special Requests</label>
+                    <input type="text" id="comments">
+                </div>
+                <button type="submit" class="btn btn-accent">Complete Booking</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <h3>SPACEXPLORE</h3>
+        <p>123 Stargazer Lane, Cosmos City</p>
+        <p>Phone: (555) 123-4567 | Email: info@spacexplore.com</p>
+        <p>&copy; 2023 SpaceXplore. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Booking modal functionality
+        const bookBtn = document.getElementById('bookBtn');
+        const bookingModal = document.getElementById('bookingModal');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        bookBtn.addEventListener('click', () => {
+            bookingModal.style.display = 'flex';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            bookingModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                bookingModal.style.display = 'none';
+            }
+        });
+        
+        // Form submission handling
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Login functionality would connect to backend in production');
+            // In a real implementation, this would validate and send to server
+        });
+        
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}! Your workshop booking has been received. We'll contact you shortly to confirm.`);
+            bookingModal.style.display = 'none';
+            // In a real implementation, this would send data to server
+        });
+    </script>
+</body>
+</html>

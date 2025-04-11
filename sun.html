@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+        h1,h2,h3{
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        h1 {
+            color: #e67e22;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h2 {
+            color: #d35400;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+        b {
+            color: #c0392b;
+        }
+        .key-concept {
+            background-color: #fef9e7;
+            padding: 15px;
+            border-left: 4px solid #f39c12;
+            margin: 15px auto;
+            max-width: 800px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .sun-fact {
+            font-style: italic;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .sun-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            justify-tracks: center;
+            border-radius: 8px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: center;
+        }
+        ul {
+            display: inline-block;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+    <br><br><br><br><br>
+
+    <h1>Introduction</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSREi2euC-i2c4Yiei8e5UBvnJttPJ6Z81GRQ&s" alt="The Sun" class="sun-image">
+    <p>The Sun is the heart of our solar system and the source of all energy that sustains life on Earth. This massive ball of plasma, composed primarily of hydrogen and helium, has fascinated civilizations throughout history. As the closest star to Earth, the Sun serves as a crucial laboratory for understanding stellar physics and the workings of the universe.</p>
+
+    <p>This article explores the Sun's structure, lifecycle, energy production, and its vital relationship with Earth. By understanding our star, we gain insights into the fundamental processes that govern all stars in the cosmos.</p>
+
+    <h1>1. What is the Sun?</h1>
+    <p>The Sun is a G-type main-sequence star (G2V) that contains 99.86% of the mass in our solar system. With a diameter of about 1.4 million kilometers (109 times Earth's diameter), it could fit 1.3 million Earths inside its volume.</p>
+
+    <div class="key-concept">
+        <h2>Key Characteristics:</h2>
+        
+        <h3>Composition:</h3>
+        <p>73% hydrogen, 25% helium, and 2% heavier elements (oxygen, carbon, neon, iron)</p>
+        
+        <h3>Physical Properties:</h3>
+        <p><b>Surface Temperature:</b> 5,500°C (9,932°F)<br>
+           <b>Core Temperature:</b> 15 million°C (27 million°F)<br>
+           <b>Mass:</b> 1.989 × 10³⁰ kg (333,000 Earth masses)</p>
+        
+        <h3>Energy Output:</h3>
+        <p>3.8 × 10²⁶ watts of power through nuclear fusion</p>
+    </div>
+
+    <h1>2. Structure of the Sun</h1>
+    <p>The Sun consists of several distinct layers, each with unique properties:</p>
+
+    <h2>A. Core</h2>
+    <p>The central region where nuclear fusion occurs, converting hydrogen into helium and releasing enormous amounts of energy. This process follows Einstein's E=mc² equation.</p>
+
+    <h2>B. Radiative Zone</h2>
+    <p>Energy from the core travels outward through this dense region via radiation, taking about 170,000 years to pass through.</p>
+
+    <h2>C. Convective Zone</h2>
+    <p>Hot plasma rises and cooler plasma sinks in convection currents, transporting energy to the surface.</p>
+
+    <h2>D. Photosphere</h2>
+    <p>The visible "surface" of the Sun where sunlight is emitted. Sunspots appear here as cooler regions.</p>
+
+    <h2>E. Chromosphere</h2>
+    <p>A reddish layer visible during solar eclipses, hotter than the photosphere at about 20,000°C.</p>
+
+    <h2>F. Corona</h2>
+    <p>The Sun's outer atmosphere, extending millions of kilometers into space with temperatures exceeding 1 million°C.</p>
+
+    <h1>3. Solar Activity and Phenomena</h1>
+
+    <h2>A. Sunspots</h2>
+    <p>Cooler, dark regions caused by intense magnetic activity, following an 11-year cycle.</p>
+
+    <h2>B. Solar Flares</h2>
+    <p>Sudden flashes of increased brightness, releasing energy equivalent to billions of megatons of TNT.</p>
+
+    <h2>C. Coronal Mass Ejections (CMEs)</h2>
+    <p>Massive bursts of solar wind and magnetic fields rising above the corona, which can affect Earth's magnetosphere.</p>
+
+    <h2>D. Solar Wind</h2>
+    <p>A stream of charged particles constantly flowing from the Sun at 400-800 km/s.</p>
+
+    <h1>4. The Sun's Life Cycle</h1>
+    <p>The Sun is currently about 4.6 billion years old, middle-aged in its stellar evolution:</p>
+
+    <h2>A. Formation (4.6 billion years ago)</h2>
+    <p>Formed from a collapsing molecular cloud of gas and dust.</p>
+
+    <h2>B. Main Sequence (Current Phase)</h2>
+    <p>Will continue fusing hydrogen for another 5 billion years.</p>
+
+    <h2>C. Red Giant Phase (In ~5 billion years)</h2>
+    <p>Will expand to engulf Mercury and Venus, possibly Earth.</p>
+
+    <h2>D. Planetary Nebula and White Dwarf</h2>
+    <p>Will shed its outer layers, leaving behind a dense white dwarf that will cool over billions of years.</p>
+
+    <h1>5. The Sun and Earth</h1>
+
+    <h2>A. Energy Source</h2>
+    <p>Provides 174 petawatts of energy to Earth's system, driving weather, climate, and photosynthesis.</p>
+
+    <h2>B. Space Weather Effects</h2>
+    <p>Solar activity can disrupt satellites, power grids, and communications.</p>
+
+    <h2>C. Auroras</h2>
+    <p>Charged particles interacting with Earth's atmosphere create the northern and southern lights.</p>
+
+    <h1>6. Solar Research and Exploration</h1>
+
+    <h2>A. Space Missions</h2>
+    <p>Parker Solar Probe (closest approach to Sun), Solar Orbiter, SOHO, and others study solar phenomena.</p>
+
+    <h2>B. Ground-based Observatories</h2>
+    <p>Advanced telescopes monitor solar activity 24/7 for space weather prediction.</p>
+
+    <h2>C. Future Studies</h2>
+    <p>Research focuses on predicting solar storms, understanding the solar cycle, and solving the coronal heating problem.</p>
+
+    <div class="sun-fact">
+        <p>Fun Fact: The sunlight reaching Earth today began its journey from the Sun's core about 100,000 years ago, taking that long to reach the surface, but only 8 minutes to travel from the Sun to Earth!</p>
+    </div>
+</body>
+</html>

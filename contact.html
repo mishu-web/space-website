@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SpaceXplore</title>
+    <style>
+        :root {
+            --primary: #3a0ca3;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+     
+       
+        /* Contact Page Styles */
+        .contact-header {
+            background: linear-gradient(rgba(58, 12, 163, 0.8), rgba(114, 9, 183, 0.8)), 
+                        url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .contact-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .contact-section {
+            display: flex;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .contact-info {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            color : var(--dark);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            color : var(--dark);
+        }
+        
+        .info-item {
+            display: flex;
+            color : var(--dark);
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        label {
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #nav-placeholder {
+            position: fixed;
+            top: 0;
+            gap : 1rem;
+            max-width: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+   
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .map-container {
+            margin: 3rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        .team-image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <script>
+    // Simple navbar loader
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+                // Add 60px padding to body to prevent navbar from hiding content
+                document.body.style.paddingTop = '60px';
+            })
+            .catch(err => console.log('Failed to load navbar:', err));
+    });
+    </script>
+    <br>
+    <br>
+    
+
+    <div class="contact-header">
+        <h1>Connect With SpaceXplore</h1>
+        <p>Have questions about our workshops, events, or astronomy programs? Reach out to our team - we're always excited to talk about space!</p>
+    </div>
+    
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwN6Sc9q2-Znc6yjb8dgo_UzMMzOSX1rdHhQ&s" alt="SpaceXplore Team" class="team-image" height ="50%">
+        
+        <div class="contact-section">
+            <div class="contact-info">
+                <h2>Our Contact Information</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h3>Visit Us</h3>
+                        <p>123 Stargazer Avenue<br>
+                        Cosmos City, CC 90210</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>General Inquiries: (555) 123-4567<br>
+                        Workshop Bookings: (555) 123-4568</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>info@spacexplore.com<br>
+                        support@spacexplore.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <h3>Hours</h3>
+                        <p>Monday-Friday: 10am - 6pm<br>
+                        Saturday: 12pm - 8pm<br>
+                        Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-users"></i></div>
+                    <div>
+                        <h3>Social Media</h3>
+                        <p>
+                            <a href="#" style="color: var(--primary);"><i class="fab fa-facebook-f"></i> Facebook</a><br>
+                            <a href="#" style="color: var(--primary);"><i class="fab fa-twitter"></i> Twitter</a><br>
+                            <a href="#" style="color: var(--primary);"><i class="fab fa-instagram"></i> Instagram</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="workshop">Workshop Information</option>
+                            <option value="event">Event Question</option>
+                            <option value="volunteer">Volunteer Opportunity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256024042!2d-73.98784468459382!3d40.7484404793279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjQiTiA3M8KwNTknMTkuNiJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        <div class="contact-info" style="text-align: center; margin: 3rem 0;">
+            <h2>Upcoming Open House Events</h2>
+            <p>Join us for our monthly open house where you can tour our facilities, meet our team, and try out our telescopes!</p>
+
+            <p>Next Open House: June 15th, 2023 | 5pm-9pm</p>
+        </div>
+    </div>
+</body>
+</html>
