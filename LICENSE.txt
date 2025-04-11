@@ -1,0 +1,23 @@
+Proprietary License
+
+Copyright (c) 2025 Mubashra Iqbal
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software under the following conditions:
+
+1. No Redistribution: The Software may not be redistributed, copied, or sold without explicit permission from the author.
+
+
+2. No Modification: The Software may not be modified, reverse-engineered, or created into derivative works without explicit permission from the author.
+
+
+3. Commercial Use: The Software may not be used for commercial purposes unless a separate commercial license agreement is made with the author.
+
+
+4. License Notice: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+
+5. No Warranty: The Software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, 
+whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the Software.
